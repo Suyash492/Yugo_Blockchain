@@ -72,13 +72,13 @@ const initContract = async () => {
   return rideContract;
 };
 
-export const createRide = async (startLocation, endLocation, fare) => {
+export const createRide = async (startLocation, endLocation, fare, date, time) => {
   if (!rideContract) {
     await initContract();
   }
   const accounts = await web3.eth.getAccounts();
   const result = await rideContract.methods
-    .createRide(startLocation, endLocation, fare)
+    .createRide(startLocation, endLocation, fare, date, time)
     .send({ from: accounts[0] });
   return result;
 };
@@ -120,7 +120,7 @@ export const getAllRides = async () => {
   }
   return rides;
 };
-export const getMatchedRides = async (startLocation1, endLocation1) => {
+export const getMatchedRides = async (startLocation1, endLocation1,date1) => {
   if (!rideContract) {
     await initContract();
   }
@@ -131,7 +131,8 @@ export const getMatchedRides = async (startLocation1, endLocation1) => {
     console.log(ride);
     if (
       ride[0] == startLocation1 &&
-      ride[1] == endLocation1
+      ride[1] == endLocation1 &&
+      ride[3] == date1
     ){
       console.log("adw")
       matchedRides.push(ride);

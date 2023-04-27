@@ -23,10 +23,12 @@ function AllRides() {
           {rides.map((ride, index) => (
             <Card className="mt-3" key={index}>
               <Card.Body>
-                <Card.Title>Ride {index + 1}</Card.Title>
+                <Card.Title>Ride {index + 1 }</Card.Title>
                 <Card.Text>Start Location: {ride[0]}</Card.Text>
                 <Card.Text>End Location: {ride[1]}</Card.Text>
                 <Card.Text>Fare: {ride[2]}</Card.Text>
+                <Card.Text>Date: {ride[3]}</Card.Text>
+                <Card.Text>Time: {ride[4]}</Card.Text>
               </Card.Body>
             </Card>
           ))}

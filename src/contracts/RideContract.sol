@@ -10,6 +10,8 @@ contract RideContract {
         string startLocation;
         string endLocation;
         uint256 fare;
+        uint256 date;
+        uint256 time;
         bool booked;
         RideStatus status;
     }
@@ -20,7 +22,7 @@ contract RideContract {
 
     event NewRide(uint rideId);
     uint256 public totalRides=0;
-    function createRide(string memory _startLocation, string memory _endLocation, uint256 _fare) public {
+    function createRide(string memory _startLocation, string memory _endLocation, uint256 _fare, uint256 _date, uint256 _time) public {
         uint rideId = rides.length + 1;
         Ride memory newRide = Ride({
             id: rideId,
@@ -28,6 +30,8 @@ contract RideContract {
             startLocation: _startLocation,
             endLocation: _endLocation,
             fare: _fare,
+            date: _date,
+            time: _time,
             booked: false,
             status: RideStatus.Active 
         });
@@ -37,8 +41,8 @@ contract RideContract {
         emit NewRide(rideId);
         totalRides=rideId;
     }
-    function getDetails(uint256 _id)public view returns(string memory,string memory,uint256){
-        return (rides[_id-1].startLocation,rides[_id-1].endLocation,rides[_id-1].fare);
+    function getDetails(uint256 _id)public view returns(string memory,string memory,uint256,uint256,uint256){
+        return (rides[_id-1].startLocation,rides[_id-1].endLocation,rides[_id-1].fare,rides[_id-1].date,rides[_id-1].time);
     }
 
     function deleteRide(uint256 _rideId) public {

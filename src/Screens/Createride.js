@@ -7,19 +7,24 @@ function Createride() {
   const [startLocation, setStartLocation] = useState("");
   const [endLocation, setEndLocation] = useState("");
   const [fare, setFare] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [rideInfo, setRideInfo] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       console.log("njd");
-      const result = await createRide(startLocation, endLocation, fare);
+      const result = await createRide(startLocation, endLocation, fare,date,time);
+      console.log(result)
       const id = result.events.NewRide.returnValues.rideId;
       const data = await getDetails(id);
       setRideInfo(data);
       setStartLocation("");
       setEndLocation("");
       setFare("");
+      setDate("");
+      setTime("");
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -60,6 +65,24 @@ function Createride() {
                 onChange={(event) => setFare(event.target.value)}
               />
             </Form.Group>
+            <Form.Group controlId="formDate">
+              <Form.Label>Date</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter date"
+                value={date}
+                onChange={(event) => setDate(event.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="formTime">
+              <Form.Label>Time</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter time"
+                value={time}
+                onChange={(event) => setTime(event.target.value)}
+              />
+            </Form.Group>
             <Button variant="primary" type="submit">
               Submit
             </Button>
@@ -73,6 +96,8 @@ function Createride() {
                 <Card.Text>End Location: {rideInfo[1]}</Card.Text>
                 {/* <Card.Text>End Location: {endLocation}</Card.Text> */}
                 <Card.Text>Fare: {rideInfo[2]}</Card.Text>
+                <Card.Text>Date: {rideInfo[3]}</Card.Text>
+                <Card.Text>Time: {rideInfo[4]}</Card.Text>
                 {/* <Card.Text>Fare: {fare}</Card.Text> */}
               </Card.Body>
             </Card>
