@@ -1,81 +1,61 @@
-// import React, { useState } from "react";
-// import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
-// import { bookRide, getDetails } from "../Web3helpers";
-// import Navbar from "./Navbar";
+import React, { useState } from 'react';
+import { getMatchedRides } from '../Web3helpers';
+import { Container, Row, Col, Card } from "react-bootstrap";
 
-// function Bookride() {
-//   const [startLocation, setStartLocation] = useState("");
-//   const [endLocation, setEndLocation] = useState("");
-//   const [rides, setRides] = useState([]);
+const RideList = () => {
+  const [startLocation1, setStartLocation] = useState('');
+  const [endLocation1, setEndLocation] = useState('');
+  const [rides, setRides] = useState([]);
 
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     try {
-//       const result = await bookRide(startLocation, endLocation);
-//       const rideIds = await result.map((id) => id.toNumber());
-//       const ridesData = await Promise.all(
-//         rideIds.map(async (id) => {
-//           const data = await getDetails(id);
-//           return { id, data };
-//         })
-//       );
-//       setRides(ridesData);
-//       setStartLocation("");
-//       setEndLocation("");
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const availableRides = await getMatchedRides(startLocation1, endLocation1);
+      console.log(availableRides);
+      setRides(availableRides);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
 
-//   return (
-//     <Container>
-//       <Navbar />
-//       <Row>
-//         <Col>
-//           <h1>Book a Ride</h1>
-//           <Form onSubmit={handleSubmit}>
-//             <Form.Group controlId="formStartLocation">
-//               <Form.Label>Start Location</Form.Label>
-//               <Form.Control
-//                 type="text"
-//                 placeholder="Enter start location"
-//                 value={startLocation}
-//                 onChange={(event) => setStartLocation(event.target.value)}
-//               />
-//             </Form.Group>
-//             <Form.Group controlId="formEndLocation">
-//               <Form.Label>End Location</Form.Label>
-//               <Form.Control
-//                 type="text"
-//                 placeholder="Enter end location"
-//                 value={endLocation}
-//                 onChange={(event) => setEndLocation(event.target.value)}
-//               />
-//             </Form.Group>
-//             <Button variant="primary" type="submit">
-//               Search
-//             </Button>
-//           </Form>
-//           {rides.length > 0 && (
-//             <div className="mt-3">
-//               <h3>Search Results</h3>
-//               {rides.map((ride) => (
-//                 <Card className="mt-3" key={ride.id}>
-//                   <Card.Body>
-//                     <Card.Title>Ride Information</Card.Title>
-//                     <Card.Text>Start Location: {ride.data[0]}</Card.Text>
-//                     <Card.Text>End Location: {ride.data[1]}</Card.Text>
-//                     <Card.Text>Fare: {ride.data[2]}</Card.Text>
-//                     <Card.Text>Driver Address: {ride.data[3]}</Card.Text>
-//                   </Card.Body>
-//                 </Card>
-//               ))}
-//             </div>
-//           )}
-//         </Col>
-//       </Row>
-//     </Container>
-//   );
-// }
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Start Location:
+          <input type="text" value={startLocation1} onChange={(e) => setStartLocation(e.target.value)} />
+        </label>
+        <label>
+          End Location:
+          <input type="text" value={endLocation1} onChange={(e) => setEndLocation(e.target.value)} />
+        </label>
+        <button type="submit">Search Rides</button>
+      </form>
+      {rides.length > 0 ? (
+        <ul>
+          {rides.map((ride) => (
+            <li key={ride.id}>
+              Ride : {ride[0]} to {ride[1]} for {ride[2]} wei
+              <button>Book</button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No rides found</p>
+      )}
+      {/* {rides.map((ride, index) => (
+            <Card className="mt-3" key={index}>
+              <Card.Body>
+                <Card.Title>Ride {index + 1}</Card.Title>
+                <Card.Text>Start Location: {ride[0]}</Card.Text>
+                <Card.Text>End Location: {ride[1]}</Card.Text>
+                <Card.Text>Fare: {ride[2]}</Card.Text>
+              </Card.Body>
+            </Card>
+          ))} */}
+    </div>
+  );
+};
 
-// export default Bookride;
+export default RideList;

@@ -109,14 +109,33 @@ export const getTotalRides = async () => {
   return rideCount;
 };
 export const getAllRides = async () => {
-    if (!rideContract) {
-      await initContract();
+  if (!rideContract) {
+    await initContract();
+  }
+  const totalRides = await rideContract.methods.totalRides().call();
+  const rides = [];
+  for (let i = 1; i <= totalRides; i++) {
+    const ride = await rideContract.methods.getDetails(i).call();
+    rides.push(ride);
+  }
+  return rides;
+};
+export const getMatchedRides = async (startLocation1, endLocation1) => {
+  if (!rideContract) {
+    await initContract();
+  }
+  const totalRides = await rideContract.methods.totalRides().call();
+  const matchedRides = [];
+  for (let i = 1; i <= totalRides; i++) {
+    const ride = await rideContract.methods.getDetails(i).call();
+    console.log(ride);
+    if (
+      ride[0] == startLocation1 &&
+      ride[1] == endLocation1
+    ){
+      console.log("adw")
+      matchedRides.push(ride);
     }
-    const totalRides = await rideContract.methods.totalRides().call();
-    const rides = [];
-    for (let i = 1; i <= totalRides; i++) {
-      const ride = await rideContract.methods.getDetails(i).call();
-      rides.push(ride);
-    }
-    return rides;
-  };
+  }
+  return matchedRides;
+};
