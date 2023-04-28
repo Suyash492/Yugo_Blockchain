@@ -11,7 +11,7 @@ contract BookingContract is RideContract {
 
         rides[_rideId - 1].booked = true;
         userToRides[msg.sender].push(_rideId);
-        payable(rides[_rideId - 1].driver).transfer(msg.value);
+        payable(rides[_rideId - 1].driver).transfer(rides[_rideId - 1].fare);
     }
 
     function getRidesByUser(address _user) public view returns (uint[] memory) {

@@ -20,7 +20,7 @@ function App() {
             element={email ? <Home /> : <Navigate to="/" />}
           />
           <Route path="/Createride" element={<Createride />} />
-          <Route path="/all-rides" element={<AllRides />} />
+          <Route path="/Allrides" element={<AllRides />} />
           <Route path="/Bookride" element={<Bookride />} />
         </Routes>
       </BrowserRouter>

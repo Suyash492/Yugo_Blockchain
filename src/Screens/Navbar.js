@@ -3,17 +3,22 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul className='flex'>
+    <nav className="bg-gray-800">
+      <ul className="flex mx-3 px-4 py-3">
         <li>
-          {/* <NavLink exact to="/">Home</NavLink> */}
-          <NavLink exact="true" to="/">Home</NavLink>
+          <NavLink exact to="/Home" className="text-white hover:text-gray-200 px-4">
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/create-ride">Create Ride</NavLink>
+          <NavLink to="/Createride" className="text-white hover:text-gray-200 px-4">
+            Create Ride
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/all-rides">All Rides</NavLink>
+          <NavLink to="/Allrides" className="text-white hover:text-gray-200 px-4">
+            All Rides
+          </NavLink>
         </li>
       </ul>
     </nav>

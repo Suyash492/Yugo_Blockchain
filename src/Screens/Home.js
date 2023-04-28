@@ -15,35 +15,36 @@ export default function Home() {
     navigate("/Bookride");
   }
   return (
-    <div>
+    <div className="bg-gray-100 min-h-screen">
       <Navbar></Navbar>
-      <h3>Your account: {account} </h3>
-      <h3>Your email: {email} </h3>
-      <button
-        style={button}
-        onClick={() => {
-          localStorage.removeItem("email");
-          localStorage.removeItem("account");
-          window.location.reload();
-        }}
-      >
-        {" "}
-        Log out
-      </button>
-      
-        <button  onClick={changetocreate}>Create Ride</button>
-        <button  onClick={changetobook}>Book Ride</button>
+      <div className="max-w-4xl mx-auto py-10 px-5">
+        <h3 className="text-2xl font-bold mb-5">Your account: {account} </h3>
+        <h3 className="text-2xl font-bold mb-5">Your email: {email} </h3>
+        <button
+          className="bg-purple-600 text-white px-4 py-2 rounded-md mr-5 hover:bg-purple-700"
+          onClick={() => {
+            localStorage.removeItem("email");
+            localStorage.removeItem("account");
+            window.location.reload();
+          }}
+        >
+          Log out
+        </button>
+        <div className="mt-10 flex flex-col gap-5">
+          <button
+            className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700"
+            onClick={changetocreate}
+          >
+            Create Ride
+          </button>
+          <button
+            className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700"
+            onClick={changetobook}
+          >
+            Book Ride
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
-const button = {
-  width: 100,
-  padding: 10,
-  borderRadius: 5,
-  margin: 10,
-  cursor: "pointer",
-  fontSize: 17,
-  color: "white",
-  backgroundColor: "#9D27CD",
-  border: "none",
-};

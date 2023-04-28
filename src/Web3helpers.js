@@ -72,13 +72,13 @@ const initContract = async () => {
   return rideContract;
 };
 
-export const createRide = async (startLocation, endLocation, fare, date, time) => {
+export const createRide = async (startLocation, endLocation, fare, date, time,noofpass) => {
   if (!rideContract) {
     await initContract();
   }
   const accounts = await web3.eth.getAccounts();
   const result = await rideContract.methods
-    .createRide(startLocation, endLocation, fare, date, time)
+    .createRide(startLocation, endLocation, fare, date, time,noofpass)
     .send({ from: accounts[0] });
   return result;
 };
