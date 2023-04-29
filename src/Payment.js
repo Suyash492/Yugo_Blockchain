@@ -28,7 +28,7 @@ export default function Payment() {
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit1 = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     setError();
@@ -41,7 +41,7 @@ export default function Payment() {
   };
 
   return (
-    <form className="m-4" onSubmit={handleSubmit}>
+    <form className="m-4" onSubmit={handleSubmit1}>
       <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
         <main className="mt-4 p-4">
           <h1 className="text-xl font-semibold text-gray-700 text-center">

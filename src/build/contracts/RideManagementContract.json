@@ -1938,7 +1938,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_enum$_RideStatus_$222__to_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_uint8__fromStack_reversed",
+            "name": "abi_encode_tuple_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_enum$_RideStatus_$226__to_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_uint8__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -8173,7 +8173,7 @@
           }
         ]
       },
-      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function abi_encode_string(value, pos) -> end\n    {\n        let length := mload(value)\n        mstore(pos, length)\n        let i := 0\n        for { } lt(i, length) { i := add(i, 0x20) }\n        {\n            let _1 := 0x20\n            mstore(add(add(pos, i), _1), mload(add(add(value, i), _1)))\n        }\n        mstore(add(add(pos, length), 0x20), 0)\n        end := add(add(pos, and(add(length, 31), not(31))), 0x20)\n    }\n    function panic_error_0x21()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x21)\n        revert(0, 0x24)\n    }\n    function abi_encode_tuple_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_enum$_RideStatus_$222__to_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_uint8__fromStack_reversed(headStart, value9, value8, value7, value6, value5, value4, value3, value2, value1, value0) -> tail\n    {\n        let _1 := 320\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), and(value1, sub(shl(160, 1), 1)))\n        mstore(add(headStart, 64), _1)\n        let tail_1 := abi_encode_string(value2, add(headStart, _1))\n        mstore(add(headStart, 96), sub(tail_1, headStart))\n        tail := abi_encode_string(value3, tail_1)\n        mstore(add(headStart, 128), value4)\n        mstore(add(headStart, 160), value5)\n        mstore(add(headStart, 192), value6)\n        mstore(add(headStart, 224), value7)\n        mstore(add(headStart, 256), iszero(iszero(value8)))\n        if iszero(lt(value9, 3))\n        {\n            mstore(0, shl(224, 0x4e487b71))\n            mstore(4, 0x21)\n            revert(0, 0x24)\n        }\n        mstore(add(headStart, 288), value9)\n    }\n    function abi_decode_tuple_t_address(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        if iszero(eq(value, and(value, sub(shl(160, 1), 1)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function panic_error_0x41()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x41)\n        revert(0, 0x24)\n    }\n    function abi_decode_string(offset, end) -> array\n    {\n        if iszero(slt(add(offset, 0x1f), end)) { revert(0, 0) }\n        let _1 := calldataload(offset)\n        let _2 := 0xffffffffffffffff\n        if gt(_1, _2) { panic_error_0x41() }\n        let _3 := not(31)\n        let memPtr := mload(64)\n        let newFreePtr := add(memPtr, and(add(and(add(_1, 0x1f), _3), 63), _3))\n        if or(gt(newFreePtr, _2), lt(newFreePtr, memPtr)) { panic_error_0x41() }\n        mstore(64, newFreePtr)\n        mstore(memPtr, _1)\n        if gt(add(add(offset, _1), 0x20), end) { revert(0, 0) }\n        calldatacopy(add(memPtr, 0x20), add(offset, 0x20), _1)\n        mstore(add(add(memPtr, _1), 0x20), 0)\n        array := memPtr\n    }\n    function abi_decode_tuple_t_string_memory_ptrt_string_memory_ptrt_uint256t_uint256t_uint256t_uint256(headStart, dataEnd) -> value0, value1, value2, value3, value4, value5\n    {\n        if slt(sub(dataEnd, headStart), 192) { revert(0, 0) }\n        let offset := calldataload(headStart)\n        let _1 := 0xffffffffffffffff\n        if gt(offset, _1) { revert(0, 0) }\n        value0 := abi_decode_string(add(headStart, offset), dataEnd)\n        let offset_1 := calldataload(add(headStart, 32))\n        if gt(offset_1, _1) { revert(0, 0) }\n        value1 := abi_decode_string(add(headStart, offset_1), dataEnd)\n        value2 := calldataload(add(headStart, 64))\n        value3 := calldataload(add(headStart, 96))\n        value4 := calldataload(add(headStart, 128))\n        value5 := calldataload(add(headStart, 160))\n    }\n    function abi_encode_tuple_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_address__to_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_address__fromStack_reversed(headStart, value6, value5, value4, value3, value2, value1, value0) -> tail\n    {\n        mstore(headStart, 224)\n        let tail_1 := abi_encode_string(value0, add(headStart, 224))\n        mstore(add(headStart, 32), sub(tail_1, headStart))\n        tail := abi_encode_string(value1, tail_1)\n        mstore(add(headStart, 64), value2)\n        mstore(add(headStart, 96), value3)\n        mstore(add(headStart, 128), value4)\n        mstore(add(headStart, 160), value5)\n        mstore(add(headStart, 192), and(value6, sub(shl(160, 1), 1)))\n    }\n    function panic_error_0x32()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n    function extract_byte_array_length(data) -> length\n    {\n        length := shr(1, data)\n        let outOfPlaceEncoding := and(data, 1)\n        if iszero(outOfPlaceEncoding) { length := and(length, 0x7f) }\n        if eq(outOfPlaceEncoding, lt(length, 32))\n        {\n            mstore(0, shl(224, 0x4e487b71))\n            mstore(4, 0x22)\n            revert(0, 0x24)\n        }\n    }\n    function panic_error_0x11()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n    function checked_sub_t_uint256(x, y) -> diff\n    {\n        diff := sub(x, y)\n        if gt(diff, x) { panic_error_0x11() }\n    }\n    function abi_encode_tuple_t_stringliteral_b89edf027d3d1129b9f2c8dcd2ba89ffc6487f04ca050032214e13175a19a74a__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 19)\n        mstore(add(headStart, 64), \"Unauthorized access\")\n        tail := add(headStart, 96)\n    }\n    function array_dataslot_string_storage(ptr) -> data\n    {\n        mstore(0, ptr)\n        data := keccak256(0, 0x20)\n    }\n    function clean_up_bytearray_end_slots_string_storage(array, len, startIndex)\n    {\n        if gt(len, 31)\n        {\n            let _1 := 0\n            mstore(_1, array)\n            let data := keccak256(_1, 0x20)\n            let deleteStart := add(data, shr(5, add(startIndex, 31)))\n            if lt(startIndex, 0x20) { deleteStart := data }\n            let _2 := add(data, shr(5, add(len, 31)))\n            let start := deleteStart\n            for { } lt(start, _2) { start := add(start, 1) }\n            { sstore(start, _1) }\n        }\n    }\n    function extract_used_part_and_set_length_of_short_byte_array(data, len) -> used\n    {\n        used := or(and(data, not(shr(shl(3, len), not(0)))), shl(1, len))\n    }\n    function copy_byte_array_to_storage_from_t_string_storage_to_t_string_storage(slot, src)\n    {\n        if eq(slot, src) { leave }\n        let newLen := extract_byte_array_length(sload(src))\n        if gt(newLen, 0xffffffffffffffff) { panic_error_0x41() }\n        clean_up_bytearray_end_slots_string_storage(slot, extract_byte_array_length(sload(slot)), newLen)\n        let srcOffset := 0\n        switch gt(newLen, 31)\n        case 1 {\n            let loopEnd := and(newLen, not(31))\n            let src_1 := array_dataslot_string_storage(src)\n            let dstPtr := array_dataslot_string_storage(slot)\n            let i := srcOffset\n            for { } lt(i, loopEnd) { i := add(i, 0x20) }\n            {\n                sstore(dstPtr, sload(add(src_1, srcOffset)))\n                let _1 := 1\n                dstPtr := add(dstPtr, _1)\n                srcOffset := add(srcOffset, _1)\n            }\n            if lt(loopEnd, newLen)\n            {\n                let lastValue := sload(add(src_1, srcOffset))\n                sstore(dstPtr, and(lastValue, not(shr(and(shl(3, newLen), 248), not(0)))))\n            }\n            sstore(slot, add(shl(1, newLen), 1))\n        }\n        default {\n            let value := 0\n            if newLen\n            {\n                value := sload(add(src, srcOffset))\n            }\n            sstore(slot, extract_used_part_and_set_length_of_short_byte_array(value, newLen))\n        }\n    }\n    function panic_error_0x31()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x31)\n        revert(0, 0x24)\n    }\n    function increment_t_uint256(value) -> ret\n    {\n        if eq(value, not(0)) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n    function checked_add_t_uint256(x, y) -> sum\n    {\n        sum := add(x, y)\n        if gt(x, sum) { panic_error_0x11() }\n    }\n    function copy_byte_array_to_storage_from_t_string_memory_ptr_to_t_string_storage(slot, src)\n    {\n        let newLen := mload(src)\n        if gt(newLen, 0xffffffffffffffff) { panic_error_0x41() }\n        clean_up_bytearray_end_slots_string_storage(slot, extract_byte_array_length(sload(slot)), newLen)\n        let srcOffset := 0\n        let srcOffset_1 := 0x20\n        srcOffset := srcOffset_1\n        switch gt(newLen, 31)\n        case 1 {\n            let loopEnd := and(newLen, not(31))\n            let dstPtr := array_dataslot_string_storage(slot)\n            let i := 0\n            for { } lt(i, loopEnd) { i := add(i, srcOffset_1) }\n            {\n                sstore(dstPtr, mload(add(src, srcOffset)))\n                dstPtr := add(dstPtr, 1)\n                srcOffset := add(srcOffset, srcOffset_1)\n            }\n            if lt(loopEnd, newLen)\n            {\n                let lastValue := mload(add(src, srcOffset))\n                sstore(dstPtr, and(lastValue, not(shr(and(shl(3, newLen), 248), not(0)))))\n            }\n            sstore(slot, add(shl(1, newLen), 1))\n        }\n        default {\n            let value := 0\n            if newLen\n            {\n                value := mload(add(src, srcOffset))\n            }\n            sstore(slot, extract_used_part_and_set_length_of_short_byte_array(value, newLen))\n        }\n    }\n}",
+      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function abi_encode_string(value, pos) -> end\n    {\n        let length := mload(value)\n        mstore(pos, length)\n        let i := 0\n        for { } lt(i, length) { i := add(i, 0x20) }\n        {\n            let _1 := 0x20\n            mstore(add(add(pos, i), _1), mload(add(add(value, i), _1)))\n        }\n        mstore(add(add(pos, length), 0x20), 0)\n        end := add(add(pos, and(add(length, 31), not(31))), 0x20)\n    }\n    function panic_error_0x21()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x21)\n        revert(0, 0x24)\n    }\n    function abi_encode_tuple_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_enum$_RideStatus_$226__to_t_uint256_t_address_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_bool_t_uint8__fromStack_reversed(headStart, value9, value8, value7, value6, value5, value4, value3, value2, value1, value0) -> tail\n    {\n        let _1 := 320\n        mstore(headStart, value0)\n        mstore(add(headStart, 32), and(value1, sub(shl(160, 1), 1)))\n        mstore(add(headStart, 64), _1)\n        let tail_1 := abi_encode_string(value2, add(headStart, _1))\n        mstore(add(headStart, 96), sub(tail_1, headStart))\n        tail := abi_encode_string(value3, tail_1)\n        mstore(add(headStart, 128), value4)\n        mstore(add(headStart, 160), value5)\n        mstore(add(headStart, 192), value6)\n        mstore(add(headStart, 224), value7)\n        mstore(add(headStart, 256), iszero(iszero(value8)))\n        if iszero(lt(value9, 3))\n        {\n            mstore(0, shl(224, 0x4e487b71))\n            mstore(4, 0x21)\n            revert(0, 0x24)\n        }\n        mstore(add(headStart, 288), value9)\n    }\n    function abi_decode_tuple_t_address(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := calldataload(headStart)\n        if iszero(eq(value, and(value, sub(shl(160, 1), 1)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function panic_error_0x41()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x41)\n        revert(0, 0x24)\n    }\n    function abi_decode_string(offset, end) -> array\n    {\n        if iszero(slt(add(offset, 0x1f), end)) { revert(0, 0) }\n        let _1 := calldataload(offset)\n        let _2 := 0xffffffffffffffff\n        if gt(_1, _2) { panic_error_0x41() }\n        let _3 := not(31)\n        let memPtr := mload(64)\n        let newFreePtr := add(memPtr, and(add(and(add(_1, 0x1f), _3), 63), _3))\n        if or(gt(newFreePtr, _2), lt(newFreePtr, memPtr)) { panic_error_0x41() }\n        mstore(64, newFreePtr)\n        mstore(memPtr, _1)\n        if gt(add(add(offset, _1), 0x20), end) { revert(0, 0) }\n        calldatacopy(add(memPtr, 0x20), add(offset, 0x20), _1)\n        mstore(add(add(memPtr, _1), 0x20), 0)\n        array := memPtr\n    }\n    function abi_decode_tuple_t_string_memory_ptrt_string_memory_ptrt_uint256t_uint256t_uint256t_uint256(headStart, dataEnd) -> value0, value1, value2, value3, value4, value5\n    {\n        if slt(sub(dataEnd, headStart), 192) { revert(0, 0) }\n        let offset := calldataload(headStart)\n        let _1 := 0xffffffffffffffff\n        if gt(offset, _1) { revert(0, 0) }\n        value0 := abi_decode_string(add(headStart, offset), dataEnd)\n        let offset_1 := calldataload(add(headStart, 32))\n        if gt(offset_1, _1) { revert(0, 0) }\n        value1 := abi_decode_string(add(headStart, offset_1), dataEnd)\n        value2 := calldataload(add(headStart, 64))\n        value3 := calldataload(add(headStart, 96))\n        value4 := calldataload(add(headStart, 128))\n        value5 := calldataload(add(headStart, 160))\n    }\n    function abi_encode_tuple_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_address__to_t_string_memory_ptr_t_string_memory_ptr_t_uint256_t_uint256_t_uint256_t_uint256_t_address__fromStack_reversed(headStart, value6, value5, value4, value3, value2, value1, value0) -> tail\n    {\n        mstore(headStart, 224)\n        let tail_1 := abi_encode_string(value0, add(headStart, 224))\n        mstore(add(headStart, 32), sub(tail_1, headStart))\n        tail := abi_encode_string(value1, tail_1)\n        mstore(add(headStart, 64), value2)\n        mstore(add(headStart, 96), value3)\n        mstore(add(headStart, 128), value4)\n        mstore(add(headStart, 160), value5)\n        mstore(add(headStart, 192), and(value6, sub(shl(160, 1), 1)))\n    }\n    function panic_error_0x32()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x32)\n        revert(0, 0x24)\n    }\n    function extract_byte_array_length(data) -> length\n    {\n        length := shr(1, data)\n        let outOfPlaceEncoding := and(data, 1)\n        if iszero(outOfPlaceEncoding) { length := and(length, 0x7f) }\n        if eq(outOfPlaceEncoding, lt(length, 32))\n        {\n            mstore(0, shl(224, 0x4e487b71))\n            mstore(4, 0x22)\n            revert(0, 0x24)\n        }\n    }\n    function panic_error_0x11()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x11)\n        revert(0, 0x24)\n    }\n    function checked_sub_t_uint256(x, y) -> diff\n    {\n        diff := sub(x, y)\n        if gt(diff, x) { panic_error_0x11() }\n    }\n    function abi_encode_tuple_t_stringliteral_b89edf027d3d1129b9f2c8dcd2ba89ffc6487f04ca050032214e13175a19a74a__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 19)\n        mstore(add(headStart, 64), \"Unauthorized access\")\n        tail := add(headStart, 96)\n    }\n    function array_dataslot_string_storage(ptr) -> data\n    {\n        mstore(0, ptr)\n        data := keccak256(0, 0x20)\n    }\n    function clean_up_bytearray_end_slots_string_storage(array, len, startIndex)\n    {\n        if gt(len, 31)\n        {\n            let _1 := 0\n            mstore(_1, array)\n            let data := keccak256(_1, 0x20)\n            let deleteStart := add(data, shr(5, add(startIndex, 31)))\n            if lt(startIndex, 0x20) { deleteStart := data }\n            let _2 := add(data, shr(5, add(len, 31)))\n            let start := deleteStart\n            for { } lt(start, _2) { start := add(start, 1) }\n            { sstore(start, _1) }\n        }\n    }\n    function extract_used_part_and_set_length_of_short_byte_array(data, len) -> used\n    {\n        used := or(and(data, not(shr(shl(3, len), not(0)))), shl(1, len))\n    }\n    function copy_byte_array_to_storage_from_t_string_storage_to_t_string_storage(slot, src)\n    {\n        if eq(slot, src) { leave }\n        let newLen := extract_byte_array_length(sload(src))\n        if gt(newLen, 0xffffffffffffffff) { panic_error_0x41() }\n        clean_up_bytearray_end_slots_string_storage(slot, extract_byte_array_length(sload(slot)), newLen)\n        let srcOffset := 0\n        switch gt(newLen, 31)\n        case 1 {\n            let loopEnd := and(newLen, not(31))\n            let src_1 := array_dataslot_string_storage(src)\n            let dstPtr := array_dataslot_string_storage(slot)\n            let i := srcOffset\n            for { } lt(i, loopEnd) { i := add(i, 0x20) }\n            {\n                sstore(dstPtr, sload(add(src_1, srcOffset)))\n                let _1 := 1\n                dstPtr := add(dstPtr, _1)\n                srcOffset := add(srcOffset, _1)\n            }\n            if lt(loopEnd, newLen)\n            {\n                let lastValue := sload(add(src_1, srcOffset))\n                sstore(dstPtr, and(lastValue, not(shr(and(shl(3, newLen), 248), not(0)))))\n            }\n            sstore(slot, add(shl(1, newLen), 1))\n        }\n        default {\n            let value := 0\n            if newLen\n            {\n                value := sload(add(src, srcOffset))\n            }\n            sstore(slot, extract_used_part_and_set_length_of_short_byte_array(value, newLen))\n        }\n    }\n    function panic_error_0x31()\n    {\n        mstore(0, shl(224, 0x4e487b71))\n        mstore(4, 0x31)\n        revert(0, 0x24)\n    }\n    function increment_t_uint256(value) -> ret\n    {\n        if eq(value, not(0)) { panic_error_0x11() }\n        ret := add(value, 1)\n    }\n    function checked_add_t_uint256(x, y) -> sum\n    {\n        sum := add(x, y)\n        if gt(x, sum) { panic_error_0x11() }\n    }\n    function copy_byte_array_to_storage_from_t_string_memory_ptr_to_t_string_storage(slot, src)\n    {\n        let newLen := mload(src)\n        if gt(newLen, 0xffffffffffffffff) { panic_error_0x41() }\n        clean_up_bytearray_end_slots_string_storage(slot, extract_byte_array_length(sload(slot)), newLen)\n        let srcOffset := 0\n        let srcOffset_1 := 0x20\n        srcOffset := srcOffset_1\n        switch gt(newLen, 31)\n        case 1 {\n            let loopEnd := and(newLen, not(31))\n            let dstPtr := array_dataslot_string_storage(slot)\n            let i := 0\n            for { } lt(i, loopEnd) { i := add(i, srcOffset_1) }\n            {\n                sstore(dstPtr, mload(add(src, srcOffset)))\n                dstPtr := add(dstPtr, 1)\n                srcOffset := add(srcOffset, srcOffset_1)\n            }\n            if lt(loopEnd, newLen)\n            {\n                let lastValue := mload(add(src, srcOffset))\n                sstore(dstPtr, and(lastValue, not(shr(and(shl(3, newLen), 248), not(0)))))\n            }\n            sstore(slot, add(shl(1, newLen), 1))\n        }\n        default {\n            let value := 0\n            if newLen\n            {\n                value := mload(add(src, srcOffset))\n            }\n            sstore(slot, extract_used_part_and_set_length_of_short_byte_array(value, newLen))\n        }\n    }\n}",
       "id": 5,
       "language": "Yul",
       "name": "#utility.yul"
@@ -8187,18 +8187,18 @@
     "absolutePath": "project:/contracts/RideManagementContract.sol",
     "exportedSymbols": {
       "RideContract": [
-        408
+        412
       ],
       "RideManagementContract": [
-        518
+        522
       ]
     },
-    "id": 519,
+    "id": 523,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 410,
+        "id": 414,
         "literals": [
           "solidity",
           "^",
@@ -8211,11 +8211,11 @@
       {
         "absolutePath": "project:/contracts/RideContract.sol",
         "file": "./RideContract.sol",
-        "id": 411,
+        "id": 415,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 519,
-        "sourceUnit": 409,
+        "scope": 523,
+        "sourceUnit": 413,
         "src": "60:28:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -8225,16 +8225,16 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 412,
+              "id": 416,
               "name": "RideContract",
               "nameLocations": [
                 "166:12:4"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 408,
+              "referencedDeclaration": 412,
               "src": "166:12:4"
             },
-            "id": 413,
+            "id": 417,
             "nodeType": "InheritanceSpecifier",
             "src": "166:12:4"
           }
@@ -8243,10 +8243,10 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 518,
+        "id": 522,
         "linearizedBaseContracts": [
-          518,
-          408
+          522,
+          412
         ],
         "name": "RideManagementContract",
         "nameLocation": "140:22:4",
@@ -8254,12 +8254,12 @@
         "nodes": [
           {
             "constant": false,
-            "id": 418,
+            "id": 422,
             "mutability": "mutable",
             "name": "driverToRides",
             "nameLocation": "215:13:4",
             "nodeType": "VariableDeclaration",
-            "scope": 518,
+            "scope": 522,
             "src": "186:42:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -8268,11 +8268,11 @@
               "typeString": "mapping(address => uint256[])"
             },
             "typeName": {
-              "id": 417,
+              "id": 421,
               "keyName": "",
               "keyNameLocation": "-1:-1:-1",
               "keyType": {
-                "id": 414,
+                "id": 418,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "195:7:4",
@@ -8291,7 +8291,7 @@
               "valueNameLocation": "-1:-1:-1",
               "valueType": {
                 "baseType": {
-                  "id": 415,
+                  "id": 419,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "206:4:4",
@@ -8300,7 +8300,7 @@
                     "typeString": "uint256"
                   }
                 },
-                "id": 416,
+                "id": 420,
                 "nodeType": "ArrayTypeName",
                 "src": "206:6:4",
                 "typeDescriptions": {
@@ -8314,12 +8314,12 @@
           {
             "constant": false,
             "functionSelector": "416824ea",
-            "id": 421,
+            "id": 425,
             "mutability": "mutable",
             "name": "completedRides",
             "nameLocation": "249:14:4",
             "nodeType": "VariableDeclaration",
-            "scope": 518,
+            "scope": 522,
             "src": "235:28:4",
             "stateVariable": true,
             "storageLocation": "default",
@@ -8329,7 +8329,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 419,
+                "id": 423,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "235:4:4",
@@ -8338,7 +8338,7 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 420,
+              "id": 424,
               "nodeType": "ArrayTypeName",
               "src": "235:6:4",
               "typeDescriptions": {
@@ -8350,7 +8350,7 @@
           },
           {
             "body": {
-              "id": 516,
+              "id": 520,
               "nodeType": "Block",
               "src": "334:603:4",
               "statements": [
@@ -8362,14 +8362,14 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 437,
+                        "id": 441,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 429,
+                            "id": 433,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -8380,7 +8380,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 430,
+                          "id": 434,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8399,34 +8399,34 @@
                         "rightExpression": {
                           "expression": {
                             "baseExpression": {
-                              "id": 431,
+                              "id": 435,
                               "name": "rides",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 248,
+                              "referencedDeclaration": 252,
                               "src": "367:5:4",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_Ride_$244_storage_$dyn_storage",
+                                "typeIdentifier": "t_array$_t_struct$_Ride_$248_storage_$dyn_storage",
                                 "typeString": "struct RideContract.Ride storage ref[] storage ref"
                               }
                             },
-                            "id": 435,
+                            "id": 439,
                             "indexExpression": {
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 434,
+                              "id": 438,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 432,
+                                "id": 436,
                                 "name": "_rideId",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 423,
+                                "referencedDeclaration": 427,
                                 "src": "373:7:4",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -8437,7 +8437,7 @@
                               "operator": "-",
                               "rightExpression": {
                                 "hexValue": "31",
-                                "id": 433,
+                                "id": 437,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -8464,11 +8464,11 @@
                             "nodeType": "IndexAccess",
                             "src": "367:18:4",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_Ride_$244_storage",
+                              "typeIdentifier": "t_struct$_Ride_$248_storage",
                               "typeString": "struct RideContract.Ride storage ref"
                             }
                           },
-                          "id": 436,
+                          "id": 440,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
@@ -8476,7 +8476,7 @@
                           "memberLocation": "386:6:4",
                           "memberName": "driver",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 226,
+                          "referencedDeclaration": 230,
                           "src": "367:25:4",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -8491,7 +8491,7 @@
                       },
                       {
                         "hexValue": "556e617574686f72697a656420616363657373",
-                        "id": 438,
+                        "id": 442,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -8517,7 +8517,7 @@
                           "typeString": "literal_string \"Unauthorized access\""
                         }
                       ],
-                      "id": 428,
+                      "id": 432,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -8531,7 +8531,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 439,
+                    "id": 443,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8547,13 +8547,13 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 440,
+                  "id": 444,
                   "nodeType": "ExpressionStatement",
                   "src": "345:71:4"
                 },
                 {
                   "expression": {
-                    "id": 449,
+                    "id": 453,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8561,34 +8561,34 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 441,
+                          "id": 445,
                           "name": "rides",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 248,
+                          "referencedDeclaration": 252,
                           "src": "429:5:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Ride_$244_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Ride_$248_storage_$dyn_storage",
                             "typeString": "struct RideContract.Ride storage ref[] storage ref"
                           }
                         },
-                        "id": 445,
+                        "id": 449,
                         "indexExpression": {
                           "commonType": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 444,
+                          "id": 448,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 442,
+                            "id": 446,
                             "name": "_rideId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 423,
+                            "referencedDeclaration": 427,
                             "src": "435:7:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -8599,7 +8599,7 @@
                           "operator": "-",
                           "rightExpression": {
                             "hexValue": "31",
-                            "id": 443,
+                            "id": 447,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -8626,11 +8626,11 @@
                         "nodeType": "IndexAccess",
                         "src": "429:18:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Ride_$244_storage",
+                          "typeIdentifier": "t_struct$_Ride_$248_storage",
                           "typeString": "struct RideContract.Ride storage ref"
                         }
                       },
-                      "id": 446,
+                      "id": 450,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -8638,10 +8638,10 @@
                       "memberLocation": "448:6:4",
                       "memberName": "status",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 243,
+                      "referencedDeclaration": 247,
                       "src": "429:25:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_RideStatus_$222",
+                        "typeIdentifier": "t_enum$_RideStatus_$226",
                         "typeString": "enum RideContract.RideStatus"
                       }
                     },
@@ -8649,18 +8649,18 @@
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 447,
+                        "id": 451,
                         "name": "RideStatus",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 222,
+                        "referencedDeclaration": 226,
                         "src": "457:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_enum$_RideStatus_$222_$",
+                          "typeIdentifier": "t_type$_t_enum$_RideStatus_$226_$",
                           "typeString": "type(enum RideContract.RideStatus)"
                         }
                       },
-                      "id": 448,
+                      "id": 452,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -8668,20 +8668,20 @@
                       "memberLocation": "468:9:4",
                       "memberName": "Completed",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 220,
+                      "referencedDeclaration": 224,
                       "src": "457:20:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_enum$_RideStatus_$222",
+                        "typeIdentifier": "t_enum$_RideStatus_$226",
                         "typeString": "enum RideContract.RideStatus"
                       }
                     },
                     "src": "429:48:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_RideStatus_$222",
+                      "typeIdentifier": "t_enum$_RideStatus_$226",
                       "typeString": "enum RideContract.RideStatus"
                     }
                   },
-                  "id": 450,
+                  "id": 454,
                   "nodeType": "ExpressionStatement",
                   "src": "429:48:4"
                 },
@@ -8690,34 +8690,34 @@
                     "arguments": [
                       {
                         "baseExpression": {
-                          "id": 454,
+                          "id": 458,
                           "name": "rides",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 248,
+                          "referencedDeclaration": 252,
                           "src": "504:5:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_Ride_$244_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_Ride_$248_storage_$dyn_storage",
                             "typeString": "struct RideContract.Ride storage ref[] storage ref"
                           }
                         },
-                        "id": 458,
+                        "id": 462,
                         "indexExpression": {
                           "commonType": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 457,
+                          "id": 461,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 455,
+                            "id": 459,
                             "name": "_rideId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 423,
+                            "referencedDeclaration": 427,
                             "src": "510:7:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -8728,7 +8728,7 @@
                           "operator": "-",
                           "rightExpression": {
                             "hexValue": "31",
-                            "id": 456,
+                            "id": 460,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -8755,7 +8755,7 @@
                         "nodeType": "IndexAccess",
                         "src": "504:18:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Ride_$244_storage",
+                          "typeIdentifier": "t_struct$_Ride_$248_storage",
                           "typeString": "struct RideContract.Ride storage ref"
                         }
                       }
@@ -8763,23 +8763,23 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_Ride_$244_storage",
+                          "typeIdentifier": "t_struct$_Ride_$248_storage",
                           "typeString": "struct RideContract.Ride storage ref"
                         }
                       ],
                       "expression": {
-                        "id": 451,
+                        "id": 455,
                         "name": "storedride",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 252,
+                        "referencedDeclaration": 256,
                         "src": "488:10:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_array$_t_struct$_Ride_$244_storage_$dyn_storage",
+                          "typeIdentifier": "t_array$_t_struct$_Ride_$248_storage_$dyn_storage",
                           "typeString": "struct RideContract.Ride storage ref[] storage ref"
                         }
                       },
-                      "id": 453,
+                      "id": 457,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8789,11 +8789,11 @@
                       "nodeType": "MemberAccess",
                       "src": "488:15:4",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Ride_$244_storage_$dyn_storage_ptr_$_t_struct$_Ride_$244_storage_$returns$__$attached_to$_t_array$_t_struct$_Ride_$244_storage_$dyn_storage_ptr_$",
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Ride_$248_storage_$dyn_storage_ptr_$_t_struct$_Ride_$248_storage_$returns$__$attached_to$_t_array$_t_struct$_Ride_$248_storage_$dyn_storage_ptr_$",
                         "typeString": "function (struct RideContract.Ride storage ref[] storage pointer,struct RideContract.Ride storage ref)"
                       }
                     },
-                    "id": 459,
+                    "id": 463,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8809,23 +8809,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 460,
+                  "id": 464,
                   "nodeType": "ExpressionStatement",
                   "src": "488:35:4"
                 },
                 {
                   "assignments": [
-                    465
+                    469
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 465,
+                      "id": 469,
                       "mutability": "mutable",
                       "name": "ridesByDriver",
                       "nameLocation": "551:13:4",
                       "nodeType": "VariableDeclaration",
-                      "scope": 516,
+                      "scope": 520,
                       "src": "536:28:4",
                       "stateVariable": false,
                       "storageLocation": "storage",
@@ -8835,7 +8835,7 @@
                       },
                       "typeName": {
                         "baseType": {
-                          "id": 463,
+                          "id": 467,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
                           "src": "536:4:4",
@@ -8844,7 +8844,7 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 464,
+                        "id": 468,
                         "nodeType": "ArrayTypeName",
                         "src": "536:6:4",
                         "typeDescriptions": {
@@ -8855,24 +8855,24 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 470,
+                  "id": 474,
                   "initialValue": {
                     "baseExpression": {
-                      "id": 466,
+                      "id": 470,
                       "name": "driverToRides",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 418,
+                      "referencedDeclaration": 422,
                       "src": "567:13:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_uint256_$dyn_storage_$",
                         "typeString": "mapping(address => uint256[] storage ref)"
                       }
                     },
-                    "id": 469,
+                    "id": 473,
                     "indexExpression": {
                       "expression": {
-                        "id": 467,
+                        "id": 471,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
@@ -8883,7 +8883,7 @@
                           "typeString": "msg"
                         }
                       },
-                      "id": 468,
+                      "id": 472,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8913,7 +8913,7 @@
                 },
                 {
                   "body": {
-                    "id": 506,
+                    "id": 510,
                     "nodeType": "Block",
                     "src": "653:214:4",
                     "statements": [
@@ -8923,31 +8923,31 @@
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 486,
+                          "id": 490,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "baseExpression": {
-                              "id": 482,
+                              "id": 486,
                               "name": "ridesByDriver",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 465,
+                              "referencedDeclaration": 469,
                               "src": "672:13:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                 "typeString": "uint256[] storage pointer"
                               }
                             },
-                            "id": 484,
+                            "id": 488,
                             "indexExpression": {
-                              "id": 483,
+                              "id": 487,
                               "name": "i",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 472,
+                              "referencedDeclaration": 476,
                               "src": "686:1:4",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -8968,11 +8968,11 @@
                           "nodeType": "BinaryOperation",
                           "operator": "==",
                           "rightExpression": {
-                            "id": 485,
+                            "id": 489,
                             "name": "_rideId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 423,
+                            "referencedDeclaration": 427,
                             "src": "692:7:4",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -8985,41 +8985,41 @@
                             "typeString": "bool"
                           }
                         },
-                        "id": 505,
+                        "id": 509,
                         "nodeType": "IfStatement",
                         "src": "668:188:4",
                         "trueBody": {
-                          "id": 504,
+                          "id": 508,
                           "nodeType": "Block",
                           "src": "701:155:4",
                           "statements": [
                             {
                               "expression": {
-                                "id": 496,
+                                "id": 500,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "leftHandSide": {
                                   "baseExpression": {
-                                    "id": 487,
+                                    "id": 491,
                                     "name": "ridesByDriver",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 465,
+                                    "referencedDeclaration": 469,
                                     "src": "720:13:4",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                       "typeString": "uint256[] storage pointer"
                                     }
                                   },
-                                  "id": 489,
+                                  "id": 493,
                                   "indexExpression": {
-                                    "id": 488,
+                                    "id": 492,
                                     "name": "i",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 472,
+                                    "referencedDeclaration": 476,
                                     "src": "734:1:4",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -9041,42 +9041,42 @@
                                 "operator": "=",
                                 "rightHandSide": {
                                   "baseExpression": {
-                                    "id": 490,
+                                    "id": 494,
                                     "name": "ridesByDriver",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 465,
+                                    "referencedDeclaration": 469,
                                     "src": "739:13:4",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                       "typeString": "uint256[] storage pointer"
                                     }
                                   },
-                                  "id": 495,
+                                  "id": 499,
                                   "indexExpression": {
                                     "commonType": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     },
-                                    "id": 494,
+                                    "id": 498,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "leftExpression": {
                                       "expression": {
-                                        "id": 491,
+                                        "id": 495,
                                         "name": "ridesByDriver",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 465,
+                                        "referencedDeclaration": 469,
                                         "src": "753:13:4",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                           "typeString": "uint256[] storage pointer"
                                         }
                                       },
-                                      "id": 492,
+                                      "id": 496,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -9094,7 +9094,7 @@
                                     "operator": "-",
                                     "rightExpression": {
                                       "hexValue": "31",
-                                      "id": 493,
+                                      "id": 497,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": true,
@@ -9131,7 +9131,7 @@
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 497,
+                              "id": 501,
                               "nodeType": "ExpressionStatement",
                               "src": "720:58:4"
                             },
@@ -9141,18 +9141,18 @@
                                 "expression": {
                                   "argumentTypes": [],
                                   "expression": {
-                                    "id": 498,
+                                    "id": 502,
                                     "name": "ridesByDriver",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 465,
+                                    "referencedDeclaration": 469,
                                     "src": "797:13:4",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                                       "typeString": "uint256[] storage pointer"
                                     }
                                   },
-                                  "id": 500,
+                                  "id": 504,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -9166,7 +9166,7 @@
                                     "typeString": "function (uint256[] storage pointer)"
                                   }
                                 },
-                                "id": 501,
+                                "id": 505,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -9182,12 +9182,12 @@
                                   "typeString": "tuple()"
                                 }
                               },
-                              "id": 502,
+                              "id": 506,
                               "nodeType": "ExpressionStatement",
                               "src": "797:19:4"
                             },
                             {
-                              "id": 503,
+                              "id": 507,
                               "nodeType": "Break",
                               "src": "835:5:4"
                             }
@@ -9201,17 +9201,17 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 478,
+                    "id": 482,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 475,
+                      "id": 479,
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 472,
+                      "referencedDeclaration": 476,
                       "src": "622:1:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9222,18 +9222,18 @@
                     "operator": "<",
                     "rightExpression": {
                       "expression": {
-                        "id": 476,
+                        "id": 480,
                         "name": "ridesByDriver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 465,
+                        "referencedDeclaration": 469,
                         "src": "626:13:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                           "typeString": "uint256[] storage pointer"
                         }
                       },
-                      "id": 477,
+                      "id": 481,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -9253,20 +9253,20 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 507,
+                  "id": 511,
                   "initializationExpression": {
                     "assignments": [
-                      472
+                      476
                     ],
                     "declarations": [
                       {
                         "constant": false,
-                        "id": 472,
+                        "id": 476,
                         "mutability": "mutable",
                         "name": "i",
                         "nameLocation": "615:1:4",
                         "nodeType": "VariableDeclaration",
-                        "scope": 507,
+                        "scope": 511,
                         "src": "610:6:4",
                         "stateVariable": false,
                         "storageLocation": "default",
@@ -9275,7 +9275,7 @@
                           "typeString": "uint256"
                         },
                         "typeName": {
-                          "id": 471,
+                          "id": 475,
                           "name": "uint",
                           "nodeType": "ElementaryTypeName",
                           "src": "610:4:4",
@@ -9287,10 +9287,10 @@
                         "visibility": "internal"
                       }
                     ],
-                    "id": 474,
+                    "id": 478,
                     "initialValue": {
                       "hexValue": "30",
-                      "id": 473,
+                      "id": 477,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -9309,7 +9309,7 @@
                   },
                   "loopExpression": {
                     "expression": {
-                      "id": 480,
+                      "id": 484,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -9319,11 +9319,11 @@
                       "prefix": false,
                       "src": "648:3:4",
                       "subExpression": {
-                        "id": 479,
+                        "id": 483,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 472,
+                        "referencedDeclaration": 476,
                         "src": "648:1:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -9335,7 +9335,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 481,
+                    "id": 485,
                     "nodeType": "ExpressionStatement",
                     "src": "648:3:4"
                   },
@@ -9346,11 +9346,11 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 511,
+                        "id": 515,
                         "name": "_rideId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 423,
+                        "referencedDeclaration": 427,
                         "src": "899:7:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -9366,18 +9366,18 @@
                         }
                       ],
                       "expression": {
-                        "id": 508,
+                        "id": 512,
                         "name": "completedRides",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 421,
+                        "referencedDeclaration": 425,
                         "src": "879:14:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
                           "typeString": "uint256[] storage ref"
                         }
                       },
-                      "id": 510,
+                      "id": 514,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -9391,7 +9391,7 @@
                         "typeString": "function (uint256[] storage pointer,uint256)"
                       }
                     },
-                    "id": 512,
+                    "id": 516,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9407,14 +9407,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 513,
+                  "id": 517,
                   "nodeType": "ExpressionStatement",
                   "src": "879:28:4"
                 },
                 {
                   "expression": {
                     "hexValue": "74727565",
-                    "id": 514,
+                    "id": 518,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -9428,15 +9428,15 @@
                     },
                     "value": "true"
                   },
-                  "functionReturnParameters": 427,
-                  "id": 515,
+                  "functionReturnParameters": 431,
+                  "id": 519,
                   "nodeType": "Return",
                   "src": "918:11:4"
                 }
               ]
             },
             "functionSelector": "880ed4ca",
-            "id": 517,
+            "id": 521,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -9444,17 +9444,17 @@
             "nameLocation": "281:18:4",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 424,
+              "id": 428,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 423,
+                  "id": 427,
                   "mutability": "mutable",
                   "name": "_rideId",
                   "nameLocation": "305:7:4",
                   "nodeType": "VariableDeclaration",
-                  "scope": 517,
+                  "scope": 521,
                   "src": "300:12:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9463,7 +9463,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 422,
+                    "id": 426,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "300:4:4",
@@ -9478,17 +9478,17 @@
               "src": "299:14:4"
             },
             "returnParameters": {
-              "id": 427,
+              "id": 431,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 426,
+                  "id": 430,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 517,
+                  "scope": 521,
                   "src": "329:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9497,7 +9497,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 425,
+                    "id": 429,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "329:4:4",
@@ -9511,14 +9511,14 @@
               ],
               "src": "328:6:4"
             },
-            "scope": 518,
+            "scope": 522,
             "src": "272:665:4",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 519,
+        "scope": 523,
         "src": "131:809:4",
         "usedErrors": []
       }
@@ -9531,7 +9531,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.13",
-  "updatedAt": "2023-04-28T09:59:05.236Z",
+  "updatedAt": "2023-04-29T21:30:28.195Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

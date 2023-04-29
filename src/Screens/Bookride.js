@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { getMatchedRides,bookRide,getDetails} from "../Web3helpers";
+import { getMatchedRides, bookRide, getDetails } from "../Web3helpers";
 import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import Navbar from "./Navbar";
-import {Navigate, useNavigate} from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { ethers } from "ethers";
+import ErrorMessage from "../ErrorMessage";
+// import TxList from "../TxList";
 
 const RideList = () => {
   const [startLocation1, setStartLocation] = useState("");
@@ -10,6 +13,7 @@ const RideList = () => {
   const [date1, setDate] = useState("");
   const [rides, setRides] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
   const [selectedRide, setSelectedRide] = useState(null);
 
   const handleSubmit = async (event) => {
@@ -26,11 +30,41 @@ const RideList = () => {
       console.log(error);
     }
   };
-  const navigate = useNavigate();
-function handleBookButtonClick() {
-navigate("/Payment");
-}
- 
+
+  const startPayment = async ({ setError, setTxs, ether, addr }) => {
+    try {
+      if (!window.ethereum)
+        throw new Error("No crypto wallet found. Please install it.");
+
+      await window.ethereum.send("eth_requestAccounts");
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      ethers.utils.getAddress(addr);
+      const tx = await signer.sendTransaction({
+        to: addr,
+        value: ethers.utils.parseEther(ether),
+      });
+      console.log({ ether, addr });
+      console.log("tx", tx);
+      setTxs([tx]);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+  const [error, setError] = useState();
+  const [txs, setTxs] = useState([]);
+
+  const handleSubmit1 = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    setError();
+    await startPayment({
+      setError,
+      setTxs,
+      ether: data.get("ether"),
+      addr: data.get("addr"),
+    });
+  };
 
   return (
     <div>
@@ -87,7 +121,7 @@ navigate("/Payment");
                   <p className="text-lg font-bold">
                     {ride[0]} to {ride[1]}
                   </p>
-                  <p className="text-gray-500 mt-1">{ride[2]} wei</p>
+                  <p className="text-gray-500 mt-1">{ride[2]} ETH</p>
                 </div>
                 <button
                   className="text-lg py-2 px-4 rounded-md bg-green-600 hover:bg-green-700 text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 mx-4"
@@ -113,7 +147,9 @@ navigate("/Payment");
           className="bg-gray-900 bg-opacity-50 fixed inset-0 flex items-center justify-center"
         >
           <Modal.Header closeButton className="bg-white rounded-t-lg p-4">
-            <Modal.Title className="font-bold text-lg">Book Ride</Modal.Title>
+            <Modal.Title className="font-bold text-lg mx-auto">
+              Book Ride
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body className="bg-white rounded-b-lg p-4">
             <p className="text-gray-700">
@@ -121,7 +157,7 @@ navigate("/Payment");
               {selectedRide && selectedRide[1]}
             </p>
             <p className="text-gray-700">
-              Price: {selectedRide && selectedRide[2]} wei
+              Price: {selectedRide && selectedRide[2]} ETH
             </p>
             <p className="text-gray-700">
               Date: {selectedRide && selectedRide[3]}
@@ -129,13 +165,45 @@ navigate("/Payment");
             <p className="text-gray-700">
               Time: {selectedRide && selectedRide[4]}
             </p>
-            <Button
-              variant="primary"
-              onClick={handleBookButtonClick}
-              className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded"
-            >
-              Pay Now
-            </Button>
+            <form className="m-4" onSubmit={handleSubmit1}>
+              <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
+                <main className="mt-4 p-4">
+                  <h1 className="text-xl font-semibold text-gray-700 text-center">
+                    Send ETH payment
+                  </h1>
+                  <div className="">
+                    <div className="my-3">
+                      <input
+                        type="text"
+                        name="addr"
+                        className="input input-bordered block w-full focus:ring focus:outline-none px-4 py-2 rounded-lg"
+                        value={selectedRide && selectedRide[6]}
+                        disable
+                      />
+                    </div>
+                    <div className="my-3">
+                      <input
+                        name="ether"
+                        type="text"
+                        className="input input-bordered block w-full focus:ring focus:outline-none px-4 py-2 rounded-lg"
+                        value={selectedRide && selectedRide[2]}
+                        disable
+                      />
+                    </div>
+                  </div>
+                </main>
+                <footer className="p-4">
+                  <button
+                    type="submit"
+                    className="btn btn-primary submit-button focus:ring focus:outline-none w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg"
+                  >
+                    Pay now
+                  </button>
+                  <ErrorMessage message={error} />
+                  {/* <TxList txs={txs} /> */}
+                </footer>
+              </div>
+            </form>
           </Modal.Body>
         </Modal>
       </div>

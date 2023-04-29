@@ -662,7 +662,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_contract$_RideContract_$408__to_t_address__fromStack_reversed",
+            "name": "abi_encode_tuple_t_contract$_RideContract_$412__to_t_address__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -808,7 +808,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_contract$_RideManagementContract_$518__to_t_address__fromStack_reversed",
+            "name": "abi_encode_tuple_t_contract$_RideManagementContract_$522__to_t_address__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1694,7 +1694,7 @@
           }
         ]
       },
-      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_contract$_RideContract_$408__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_contract$_RideManagementContract_$518__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_stringliteral_4ce7d3a23645eacb1e29626572f92c7b447b469836e2ab3720fdccdee5e8fdaa__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 20)\n        mstore(add(headStart, 64), \"Ride is not complete\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_467d030c045f698f6181a70f608469047b231167b6135f93768e4b6cbe7ee4be__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 42)\n        mstore(add(headStart, 64), \"Offset credit already issued for\")\n        mstore(add(headStart, 96), \" this ride\")\n        tail := add(headStart, 128)\n    }\n}",
+      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_contract$_RideContract_$412__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_contract$_RideManagementContract_$522__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_stringliteral_4ce7d3a23645eacb1e29626572f92c7b447b469836e2ab3720fdccdee5e8fdaa__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 20)\n        mstore(add(headStart, 64), \"Ride is not complete\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_467d030c045f698f6181a70f608469047b231167b6135f93768e4b6cbe7ee4be__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 42)\n        mstore(add(headStart, 64), \"Offset credit already issued for\")\n        mstore(add(headStart, 96), \" this ride\")\n        tail := add(headStart, 128)\n    }\n}",
       "id": 5,
       "language": "Yul",
       "name": "#utility.yul"
@@ -1708,21 +1708,21 @@
     "absolutePath": "project:/contracts/CarbonOffsetCredit.sol",
     "exportedSymbols": {
       "CarbonOffsetCredit": [
-        216
+        220
       ],
       "RideContract": [
-        408
+        412
       ],
       "RideManagementContract": [
-        518
+        522
       ]
     },
-    "id": 217,
+    "id": 221,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 145,
+        "id": 149,
         "literals": [
           "solidity",
           "^",
@@ -1735,11 +1735,11 @@
       {
         "absolutePath": "project:/contracts/RideManagementContract.sol",
         "file": "./RideManagementContract.sol",
-        "id": 146,
+        "id": 150,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 217,
-        "sourceUnit": 519,
+        "scope": 221,
+        "sourceUnit": 523,
         "src": "60:38:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1747,11 +1747,11 @@
       {
         "absolutePath": "project:/contracts/RideContract.sol",
         "file": "./RideContract.sol",
-        "id": 147,
+        "id": 151,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 217,
-        "sourceUnit": 409,
+        "scope": 221,
+        "sourceUnit": 413,
         "src": "100:28:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1763,9 +1763,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 216,
+        "id": 220,
         "linearizedBaseContracts": [
-          216
+          220
         ],
         "name": "CarbonOffsetCredit",
         "nameLocation": "141:18:2",
@@ -1774,36 +1774,36 @@
           {
             "constant": false,
             "functionSelector": "9f3ce132",
-            "id": 150,
+            "id": 154,
             "mutability": "mutable",
             "name": "rideManagementContract",
             "nameLocation": "197:22:2",
             "nodeType": "VariableDeclaration",
-            "scope": 216,
+            "scope": 220,
             "src": "167:52:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_RideManagementContract_$518",
+              "typeIdentifier": "t_contract$_RideManagementContract_$522",
               "typeString": "contract RideManagementContract"
             },
             "typeName": {
-              "id": 149,
+              "id": 153,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 148,
+                "id": 152,
                 "name": "RideManagementContract",
                 "nameLocations": [
                   "167:22:2"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 518,
+                "referencedDeclaration": 522,
                 "src": "167:22:2"
               },
-              "referencedDeclaration": 518,
+              "referencedDeclaration": 522,
               "src": "167:22:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RideManagementContract_$518",
+                "typeIdentifier": "t_contract$_RideManagementContract_$522",
                 "typeString": "contract RideManagementContract"
               }
             },
@@ -1812,36 +1812,36 @@
           {
             "constant": false,
             "functionSelector": "94db62db",
-            "id": 153,
+            "id": 157,
             "mutability": "mutable",
             "name": "ridecontract",
             "nameLocation": "246:12:2",
             "nodeType": "VariableDeclaration",
-            "scope": 216,
+            "scope": 220,
             "src": "226:32:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_RideContract_$408",
+              "typeIdentifier": "t_contract$_RideContract_$412",
               "typeString": "contract RideContract"
             },
             "typeName": {
-              "id": 152,
+              "id": 156,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 151,
+                "id": 155,
                 "name": "RideContract",
                 "nameLocations": [
                   "226:12:2"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 408,
+                "referencedDeclaration": 412,
                 "src": "226:12:2"
               },
-              "referencedDeclaration": 408,
+              "referencedDeclaration": 412,
               "src": "226:12:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RideContract_$408",
+                "typeIdentifier": "t_contract$_RideContract_$412",
                 "typeString": "contract RideContract"
               }
             },
@@ -1850,12 +1850,12 @@
           {
             "constant": false,
             "functionSelector": "e1a4b151",
-            "id": 157,
+            "id": 161,
             "mutability": "mutable",
             "name": "rideToOffsetCreditIssued",
             "nameLocation": "296:24:2",
             "nodeType": "VariableDeclaration",
-            "scope": 216,
+            "scope": 220,
             "src": "267:53:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1864,11 +1864,11 @@
               "typeString": "mapping(uint256 => bool)"
             },
             "typeName": {
-              "id": 156,
+              "id": 160,
               "keyName": "",
               "keyNameLocation": "-1:-1:-1",
               "keyType": {
-                "id": 154,
+                "id": 158,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "275:4:2",
@@ -1886,7 +1886,7 @@
               "valueName": "",
               "valueNameLocation": "-1:-1:-1",
               "valueType": {
-                "id": 155,
+                "id": 159,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "283:4:2",
@@ -1900,12 +1900,12 @@
           },
           {
             "constant": true,
-            "id": 160,
+            "id": 164,
             "mutability": "constant",
             "name": "CREDIT_AMOUNT",
             "nameLocation": "343:13:2",
             "nodeType": "VariableDeclaration",
-            "scope": 216,
+            "scope": 220,
             "src": "329:32:2",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1914,7 +1914,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 158,
+              "id": 162,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
               "src": "329:4:2",
@@ -1925,7 +1925,7 @@
             },
             "value": {
               "hexValue": "3230",
-              "id": 159,
+              "id": 163,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1944,23 +1944,23 @@
           {
             "anonymous": false,
             "eventSelector": "792eca78f662630fea501d03a905c6454db36bb4ed0141ffb06ff36a54b53590",
-            "id": 166,
+            "id": 170,
             "name": "OffsetCreditIssued",
             "nameLocation": "376:18:2",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 165,
+              "id": 169,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 162,
+                  "id": 166,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "rideId",
                   "nameLocation": "408:6:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 166,
+                  "scope": 170,
                   "src": "395:19:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1969,7 +1969,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 161,
+                    "id": 165,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "395:4:2",
@@ -1982,13 +1982,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 164,
+                  "id": 168,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "creditAmount",
                   "nameLocation": "421:12:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 166,
+                  "scope": 170,
                   "src": "416:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1997,7 +1997,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 163,
+                    "id": 167,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "416:4:2",
@@ -2015,26 +2015,26 @@
           },
           {
             "body": {
-              "id": 177,
+              "id": 181,
               "nodeType": "Block",
               "src": "495:98:2",
               "statements": [
                 {
                   "expression": {
-                    "id": 175,
+                    "id": 179,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 171,
+                      "id": 175,
                       "name": "rideManagementContract",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 150,
+                      "referencedDeclaration": 154,
                       "src": "506:22:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RideManagementContract_$518",
+                        "typeIdentifier": "t_contract$_RideManagementContract_$522",
                         "typeString": "contract RideManagementContract"
                       }
                     },
@@ -2043,11 +2043,11 @@
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 173,
+                          "id": 177,
                           "name": "_rideManagementContractAddress",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 168,
+                          "referencedDeclaration": 172,
                           "src": "554:30:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2062,18 +2062,18 @@
                             "typeString": "address"
                           }
                         ],
-                        "id": 172,
+                        "id": 176,
                         "name": "RideManagementContract",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 518,
+                        "referencedDeclaration": 522,
                         "src": "531:22:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RideManagementContract_$518_$",
+                          "typeIdentifier": "t_type$_t_contract$_RideManagementContract_$522_$",
                           "typeString": "type(contract RideManagementContract)"
                         }
                       },
-                      "id": 174,
+                      "id": 178,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2085,23 +2085,23 @@
                       "src": "531:54:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RideManagementContract_$518",
+                        "typeIdentifier": "t_contract$_RideManagementContract_$522",
                         "typeString": "contract RideManagementContract"
                       }
                     },
                     "src": "506:79:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_RideManagementContract_$518",
+                      "typeIdentifier": "t_contract$_RideManagementContract_$522",
                       "typeString": "contract RideManagementContract"
                     }
                   },
-                  "id": 176,
+                  "id": 180,
                   "nodeType": "ExpressionStatement",
                   "src": "506:79:2"
                 }
               ]
             },
-            "id": 178,
+            "id": 182,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -2109,17 +2109,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 169,
+              "id": 173,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 168,
+                  "id": 172,
                   "mutability": "mutable",
                   "name": "_rideManagementContractAddress",
                   "nameLocation": "463:30:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 178,
+                  "scope": 182,
                   "src": "455:38:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2128,7 +2128,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 167,
+                    "id": 171,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "455:7:2",
@@ -2144,12 +2144,12 @@
               "src": "454:40:2"
             },
             "returnParameters": {
-              "id": 170,
+              "id": 174,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "495:0:2"
             },
-            "scope": 216,
+            "scope": 220,
             "src": "443:150:2",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -2157,7 +2157,7 @@
           },
           {
             "body": {
-              "id": 214,
+              "id": 218,
               "nodeType": "Block",
               "src": "650:447:2",
               "statements": [
@@ -2167,11 +2167,11 @@
                       {
                         "arguments": [
                           {
-                            "id": 186,
+                            "id": 190,
                             "name": "_rideId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 180,
+                            "referencedDeclaration": 184,
                             "src": "711:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2187,18 +2187,18 @@
                             }
                           ],
                           "expression": {
-                            "id": 184,
+                            "id": 188,
                             "name": "rideManagementContract",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 150,
+                            "referencedDeclaration": 154,
                             "src": "669:22:2",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_RideManagementContract_$518",
+                              "typeIdentifier": "t_contract$_RideManagementContract_$522",
                               "typeString": "contract RideManagementContract"
                             }
                           },
-                          "id": 185,
+                          "id": 189,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2206,14 +2206,14 @@
                           "memberLocation": "692:18:2",
                           "memberName": "markRideAsComplete",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 517,
+                          "referencedDeclaration": 521,
                           "src": "669:41:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_bool_$",
                             "typeString": "function (uint256) external returns (bool)"
                           }
                         },
-                        "id": 187,
+                        "id": 191,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2231,7 +2231,7 @@
                       },
                       {
                         "hexValue": "52696465206973206e6f7420636f6d706c657465",
-                        "id": 188,
+                        "id": 192,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2257,7 +2257,7 @@
                           "typeString": "literal_string \"Ride is not complete\""
                         }
                       ],
-                      "id": 183,
+                      "id": 187,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2271,7 +2271,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 189,
+                    "id": 193,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2287,7 +2287,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 190,
+                  "id": 194,
                   "nodeType": "ExpressionStatement",
                   "src": "661:83:2"
                 },
@@ -2295,7 +2295,7 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 195,
+                        "id": 199,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2306,24 +2306,24 @@
                         "src": "842:34:2",
                         "subExpression": {
                           "baseExpression": {
-                            "id": 192,
+                            "id": 196,
                             "name": "rideToOffsetCreditIssued",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 157,
+                            "referencedDeclaration": 161,
                             "src": "843:24:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
                               "typeString": "mapping(uint256 => bool)"
                             }
                           },
-                          "id": 194,
+                          "id": 198,
                           "indexExpression": {
-                            "id": 193,
+                            "id": 197,
                             "name": "_rideId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 180,
+                            "referencedDeclaration": 184,
                             "src": "868:7:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2348,7 +2348,7 @@
                       },
                       {
                         "hexValue": "4f66667365742063726564697420616c72656164792069737375656420666f7220746869732072696465",
-                        "id": 196,
+                        "id": 200,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2374,7 +2374,7 @@
                           "typeString": "literal_string \"Offset credit already issued for this ride\""
                         }
                       ],
-                      "id": 191,
+                      "id": 195,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2388,7 +2388,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 197,
+                    "id": 201,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2404,37 +2404,37 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 198,
+                  "id": 202,
                   "nodeType": "ExpressionStatement",
                   "src": "834:89:2"
                 },
                 {
                   "expression": {
-                    "id": 203,
+                    "id": 207,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 199,
+                        "id": 203,
                         "name": "rideToOffsetCreditIssued",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 157,
+                        "referencedDeclaration": 161,
                         "src": "944:24:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_bool_$",
                           "typeString": "mapping(uint256 => bool)"
                         }
                       },
-                      "id": 201,
+                      "id": 205,
                       "indexExpression": {
-                        "id": 200,
+                        "id": 204,
                         "name": "_rideId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 180,
+                        "referencedDeclaration": 184,
                         "src": "969:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2456,7 +2456,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "74727565",
-                      "id": 202,
+                      "id": 206,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2476,23 +2476,23 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 204,
+                  "id": 208,
                   "nodeType": "ExpressionStatement",
                   "src": "944:40:2"
                 },
                 {
                   "assignments": [
-                    206
+                    210
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 206,
+                      "id": 210,
                       "mutability": "mutable",
                       "name": "creditAmount",
                       "nameLocation": "1002:12:2",
                       "nodeType": "VariableDeclaration",
-                      "scope": 214,
+                      "scope": 218,
                       "src": "997:17:2",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -2501,7 +2501,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 205,
+                        "id": 209,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "997:4:2",
@@ -2513,13 +2513,13 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 208,
+                  "id": 212,
                   "initialValue": {
-                    "id": 207,
+                    "id": 211,
                     "name": "CREDIT_AMOUNT",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 160,
+                    "referencedDeclaration": 164,
                     "src": "1017:13:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -2533,11 +2533,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 210,
+                        "id": 214,
                         "name": "_rideId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 180,
+                        "referencedDeclaration": 184,
                         "src": "1067:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2545,11 +2545,11 @@
                         }
                       },
                       {
-                        "id": 211,
+                        "id": 215,
                         "name": "creditAmount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 206,
+                        "referencedDeclaration": 210,
                         "src": "1076:12:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2568,18 +2568,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 209,
+                      "id": 213,
                       "name": "OffsetCreditIssued",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 166,
+                      "referencedDeclaration": 170,
                       "src": "1048:18:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 212,
+                    "id": 216,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2595,14 +2595,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 213,
+                  "id": 217,
                   "nodeType": "EmitStatement",
                   "src": "1043:46:2"
                 }
               ]
             },
             "functionSelector": "44d5aa9c",
-            "id": 215,
+            "id": 219,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2610,17 +2610,17 @@
             "nameLocation": "610:17:2",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 181,
+              "id": 185,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 180,
+                  "id": 184,
                   "mutability": "mutable",
                   "name": "_rideId",
                   "nameLocation": "633:7:2",
                   "nodeType": "VariableDeclaration",
-                  "scope": 215,
+                  "scope": 219,
                   "src": "628:12:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2629,7 +2629,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 179,
+                    "id": 183,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "628:4:2",
@@ -2644,19 +2644,19 @@
               "src": "627:14:2"
             },
             "returnParameters": {
-              "id": 182,
+              "id": 186,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "650:0:2"
             },
-            "scope": 216,
+            "scope": 220,
             "src": "601:496:2",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 217,
+        "scope": 221,
         "src": "132:968:2",
         "usedErrors": []
       }
@@ -2669,7 +2669,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.13",
-  "updatedAt": "2023-04-28T09:59:05.222Z",
+  "updatedAt": "2023-04-29T21:30:28.173Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
