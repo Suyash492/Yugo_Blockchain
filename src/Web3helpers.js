@@ -1,7 +1,7 @@
 import Web3 from "web3/dist/web3.min.js";
-
 import Auth from "./build/contracts/Auth.json";
 import RideContract from "./build/contracts/RideContract.json";
+
 
 export const loadWeb3 = async () => {
   if (window.ethereum) {
