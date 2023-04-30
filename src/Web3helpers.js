@@ -116,6 +116,8 @@ export const getAllRides = async () => {
   const rides = [];
   for (let i = 1; i <= totalRides; i++) {
     const ride = await rideContract.methods.getDetails(i).call();
+    ride[7] =i;
+    // ride[5]= ride[5]-1;
     rides.push(ride);
   }
   return rides;
@@ -128,15 +130,40 @@ export const getMatchedRides = async (startLocation1, endLocation1,date1) => {
   const matchedRides = [];
   for (let i = 1; i <= totalRides; i++) {
     const ride = await rideContract.methods.getDetails(i).call();
+    ride[7]=i;
     console.log(ride);
     if (
       ride[0] == startLocation1 &&
       ride[1] == endLocation1 &&
       ride[3] == date1
-    ){
+      ){
       console.log("adw")
-      matchedRides.push(ride);
+      matchedRides[i]=ride;
     }
   }
   return matchedRides;
+};
+
+// export const seatRides = async () => {
+//   if (!rideContract) {
+//     await initContract();
+//   }
+//   const totalRides = await rideContract.methods.totalRides().call();
+//   const rides = [];
+//   for (let i = 1; i <= totalRides; i++) {
+//     const ride = await rideContract.methods.getDetails(i).call();
+//      ride[5] =ride[5]- 1; // subtract one seat from ride[5]
+//     rides.push(ride);
+//   }
+//   return rides;
+// }
+export const decrementSeats = async (rideId) => {
+  if (!rideContract) {
+    await initContract();
+  }
+  const accounts = await web3.eth.getAccounts();
+  const result = await rideContract.methods
+    .decrementSeats(rideId)
+    .send({ from: accounts[0] });
+  return result;
 };

@@ -90,9 +90,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_rideManagementContractAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"rideId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"creditAmount\",\"type\":\"uint256\"}],\"name\":\"OffsetCreditIssued\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_rideId\",\"type\":\"uint256\"}],\"name\":\"issueOffsetCredit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rideManagementContract\",\"outputs\":[{\"internalType\":\"contract RideManagementContract\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"rideToOffsetCreditIssued\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ridecontract\",\"outputs\":[{\"internalType\":\"contract RideContract\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CarbonOffsetCredit.sol\":\"CarbonOffsetCredit\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CarbonOffsetCredit.sol\":{\"keccak256\":\"0x1b08697a0f340a43ebc6b25f5413f977d5fa1c7790737b3970b056aa6e98e65a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://698cf30a07c3d0d2926aad78b5ab3ba5ea9de654df9cfdaaf60b0d8d72b8a1ae\",\"dweb:/ipfs/QmReNxPgPHicJw2yZSrCwMUgjqHQq3QmBryWoMY84SQjd1\"]},\"project:/contracts/RideContract.sol\":{\"keccak256\":\"0xefcf8c60bb48d79b3e5d64620d1ef59ffa6485218996860c4129a9aa24929a04\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ebcff4b86998183f085d1cd34316ca4141db937b7bebdf95cb829dde89b4db68\",\"dweb:/ipfs/QmP8WcBT8RAZqKVF8cqdYYiGj1iR3YjXT7E8pZ6QK6Bmiy\"]},\"project:/contracts/RideManagementContract.sol\":{\"keccak256\":\"0xb17637c8daa42ec8622c014456561f83bcc7cbcc10251a03811d02867c335c31\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7695fd5f3308a64efbb1ee39354a905954eb614d85d9b8f4a6fa66e04e3e094e\",\"dweb:/ipfs/QmXgUJsmxY8W5V7D682b8U8tsvkzekRrSxWSefZNB3byS5\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060405161036c38038061036c83398101604081905261002f91610054565b600080546001600160a01b0319166001600160a01b0392909216919091179055610084565b60006020828403121561006657600080fd5b81516001600160a01b038116811461007d57600080fd5b9392505050565b6102d9806100936000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806344d5aa9c1461005157806394db62db146100665780639f3ce13214610096578063e1a4b151146100a9575b600080fd5b61006461005f366004610261565b6100dc565b005b600154610079906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b600054610079906001600160a01b031681565b6100cc6100b7366004610261565b60026020526000908152604090205460ff1681565b604051901515815260200161008d565b6000546040516344076a6560e11b8152600481018390526001600160a01b039091169063880ed4ca906024016020604051808303816000875af1158015610127573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061014b919061027a565b6101935760405162461bcd60e51b815260206004820152601460248201527352696465206973206e6f7420636f6d706c65746560601b60448201526064015b60405180910390fd5b60008181526002602052604090205460ff16156102055760405162461bcd60e51b815260206004820152602a60248201527f4f66667365742063726564697420616c72656164792069737375656420666f726044820152692074686973207269646560b01b606482015260840161018a565b60008181526002602052604090819020805460ff191660011790555160149082907f792eca78f662630fea501d03a905c6454db36bb4ed0141ffb06ff36a54b53590906102559084815260200190565b60405180910390a25050565b60006020828403121561027357600080fd5b5035919050565b60006020828403121561028c57600080fd5b8151801515811461029c57600080fd5b939250505056fea2646970667358221220243689c6eb970de5e926110c14b2c29f7d06432fa97c0f9bba88623f6993535164736f6c63430008130033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806344d5aa9c1461005157806394db62db146100665780639f3ce13214610096578063e1a4b151146100a9575b600080fd5b61006461005f366004610261565b6100dc565b005b600154610079906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b600054610079906001600160a01b031681565b6100cc6100b7366004610261565b60026020526000908152604090205460ff1681565b604051901515815260200161008d565b6000546040516344076a6560e11b8152600481018390526001600160a01b039091169063880ed4ca906024016020604051808303816000875af1158015610127573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061014b919061027a565b6101935760405162461bcd60e51b815260206004820152601460248201527352696465206973206e6f7420636f6d706c65746560601b60448201526064015b60405180910390fd5b60008181526002602052604090205460ff16156102055760405162461bcd60e51b815260206004820152602a60248201527f4f66667365742063726564697420616c72656164792069737375656420666f726044820152692074686973207269646560b01b606482015260840161018a565b60008181526002602052604090819020805460ff191660011790555160149082907f792eca78f662630fea501d03a905c6454db36bb4ed0141ffb06ff36a54b53590906102559084815260200190565b60405180910390a25050565b60006020828403121561027357600080fd5b5035919050565b60006020828403121561028c57600080fd5b8151801515811461029c57600080fd5b939250505056fea2646970667358221220243689c6eb970de5e926110c14b2c29f7d06432fa97c0f9bba88623f6993535164736f6c63430008130033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_rideManagementContractAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"rideId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"creditAmount\",\"type\":\"uint256\"}],\"name\":\"OffsetCreditIssued\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_rideId\",\"type\":\"uint256\"}],\"name\":\"issueOffsetCredit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rideManagementContract\",\"outputs\":[{\"internalType\":\"contract RideManagementContract\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"rideToOffsetCreditIssued\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ridecontract\",\"outputs\":[{\"internalType\":\"contract RideContract\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CarbonOffsetCredit.sol\":\"CarbonOffsetCredit\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CarbonOffsetCredit.sol\":{\"keccak256\":\"0x1b08697a0f340a43ebc6b25f5413f977d5fa1c7790737b3970b056aa6e98e65a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://698cf30a07c3d0d2926aad78b5ab3ba5ea9de654df9cfdaaf60b0d8d72b8a1ae\",\"dweb:/ipfs/QmReNxPgPHicJw2yZSrCwMUgjqHQq3QmBryWoMY84SQjd1\"]},\"project:/contracts/RideContract.sol\":{\"keccak256\":\"0xb4e9dc4ad0b853f174172cded5d32d01daf8dfa7c1a690b6d476c6347da9259c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://79f5eeaf70dc6e045c219c8e3b5a23f43624342479ce17f8ac28b2c6d5fbf294\",\"dweb:/ipfs/QmZ8iEqCDgd2W2nXVB4C8PRedLLJJzitxzZr2foeU3z83w\"]},\"project:/contracts/RideManagementContract.sol\":{\"keccak256\":\"0xb17637c8daa42ec8622c014456561f83bcc7cbcc10251a03811d02867c335c31\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7695fd5f3308a64efbb1ee39354a905954eb614d85d9b8f4a6fa66e04e3e094e\",\"dweb:/ipfs/QmXgUJsmxY8W5V7D682b8U8tsvkzekRrSxWSefZNB3byS5\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161036c38038061036c83398101604081905261002f91610054565b600080546001600160a01b0319166001600160a01b0392909216919091179055610084565b60006020828403121561006657600080fd5b81516001600160a01b038116811461007d57600080fd5b9392505050565b6102d9806100936000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806344d5aa9c1461005157806394db62db146100665780639f3ce13214610096578063e1a4b151146100a9575b600080fd5b61006461005f366004610261565b6100dc565b005b600154610079906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b600054610079906001600160a01b031681565b6100cc6100b7366004610261565b60026020526000908152604090205460ff1681565b604051901515815260200161008d565b6000546040516344076a6560e11b8152600481018390526001600160a01b039091169063880ed4ca906024016020604051808303816000875af1158015610127573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061014b919061027a565b6101935760405162461bcd60e51b815260206004820152601460248201527352696465206973206e6f7420636f6d706c65746560601b60448201526064015b60405180910390fd5b60008181526002602052604090205460ff16156102055760405162461bcd60e51b815260206004820152602a60248201527f4f66667365742063726564697420616c72656164792069737375656420666f726044820152692074686973207269646560b01b606482015260840161018a565b60008181526002602052604090819020805460ff191660011790555160149082907f792eca78f662630fea501d03a905c6454db36bb4ed0141ffb06ff36a54b53590906102559084815260200190565b60405180910390a25050565b60006020828403121561027357600080fd5b5035919050565b60006020828403121561028c57600080fd5b8151801515811461029c57600080fd5b939250505056fea264697066735822122014a92a2ba5f2c34b8bdefce9a2814fde0ce5edbd28f47a19ec655eea8051f6c664736f6c63430008130033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806344d5aa9c1461005157806394db62db146100665780639f3ce13214610096578063e1a4b151146100a9575b600080fd5b61006461005f366004610261565b6100dc565b005b600154610079906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b600054610079906001600160a01b031681565b6100cc6100b7366004610261565b60026020526000908152604090205460ff1681565b604051901515815260200161008d565b6000546040516344076a6560e11b8152600481018390526001600160a01b039091169063880ed4ca906024016020604051808303816000875af1158015610127573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061014b919061027a565b6101935760405162461bcd60e51b815260206004820152601460248201527352696465206973206e6f7420636f6d706c65746560601b60448201526064015b60405180910390fd5b60008181526002602052604090205460ff16156102055760405162461bcd60e51b815260206004820152602a60248201527f4f66667365742063726564697420616c72656164792069737375656420666f726044820152692074686973207269646560b01b606482015260840161018a565b60008181526002602052604090819020805460ff191660011790555160149082907f792eca78f662630fea501d03a905c6454db36bb4ed0141ffb06ff36a54b53590906102559084815260200190565b60405180910390a25050565b60006020828403121561027357600080fd5b5035919050565b60006020828403121561028c57600080fd5b8151801515811461029c57600080fd5b939250505056fea264697066735822122014a92a2ba5f2c34b8bdefce9a2814fde0ce5edbd28f47a19ec655eea8051f6c664736f6c63430008130033",
   "immutableReferences": {},
   "generatedSources": [
     {
@@ -662,7 +662,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_contract$_RideContract_$412__to_t_address__fromStack_reversed",
+            "name": "abi_encode_tuple_t_contract$_RideContract_$462__to_t_address__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -808,7 +808,7 @@
                 }
               ]
             },
-            "name": "abi_encode_tuple_t_contract$_RideManagementContract_$522__to_t_address__fromStack_reversed",
+            "name": "abi_encode_tuple_t_contract$_RideManagementContract_$572__to_t_address__fromStack_reversed",
             "nodeType": "YulFunctionDefinition",
             "parameters": [
               {
@@ -1694,7 +1694,7 @@
           }
         ]
       },
-      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_contract$_RideContract_$412__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_contract$_RideManagementContract_$522__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_stringliteral_4ce7d3a23645eacb1e29626572f92c7b447b469836e2ab3720fdccdee5e8fdaa__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 20)\n        mstore(add(headStart, 64), \"Ride is not complete\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_467d030c045f698f6181a70f608469047b231167b6135f93768e4b6cbe7ee4be__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 42)\n        mstore(add(headStart, 64), \"Offset credit already issued for\")\n        mstore(add(headStart, 96), \" this ride\")\n        tail := add(headStart, 128)\n    }\n}",
+      "contents": "{\n    { }\n    function abi_decode_tuple_t_uint256(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        value0 := calldataload(headStart)\n    }\n    function abi_encode_tuple_t_contract$_RideContract_$462__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_contract$_RideManagementContract_$572__to_t_address__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, and(value0, sub(shl(160, 1), 1)))\n    }\n    function abi_encode_tuple_t_bool__to_t_bool__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, iszero(iszero(value0)))\n    }\n    function abi_encode_tuple_t_uint256__to_t_uint256__fromStack_reversed(headStart, value0) -> tail\n    {\n        tail := add(headStart, 32)\n        mstore(headStart, value0)\n    }\n    function abi_decode_tuple_t_bool_fromMemory(headStart, dataEnd) -> value0\n    {\n        if slt(sub(dataEnd, headStart), 32) { revert(0, 0) }\n        let value := mload(headStart)\n        if iszero(eq(value, iszero(iszero(value)))) { revert(0, 0) }\n        value0 := value\n    }\n    function abi_encode_tuple_t_stringliteral_4ce7d3a23645eacb1e29626572f92c7b447b469836e2ab3720fdccdee5e8fdaa__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 20)\n        mstore(add(headStart, 64), \"Ride is not complete\")\n        tail := add(headStart, 96)\n    }\n    function abi_encode_tuple_t_stringliteral_467d030c045f698f6181a70f608469047b231167b6135f93768e4b6cbe7ee4be__to_t_string_memory_ptr__fromStack_reversed(headStart) -> tail\n    {\n        mstore(headStart, 32)\n        mstore(add(headStart, 32), 42)\n        mstore(add(headStart, 64), \"Offset credit already issued for\")\n        mstore(add(headStart, 96), \" this ride\")\n        tail := add(headStart, 128)\n    }\n}",
       "id": 5,
       "language": "Yul",
       "name": "#utility.yul"
@@ -1703,7 +1703,7 @@
   "sourceMap": "132:968:2:-:0;;;443:150;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;506:22;:79;;-1:-1:-1;;;;;;506:79:2;-1:-1:-1;;;;;506:79:2;;;;;;;;;;132:968;;14:290:5;84:6;137:2;125:9;116:7;112:23;108:32;105:52;;;153:1;150;143:12;105:52;179:16;;-1:-1:-1;;;;;224:31:5;;214:42;;204:70;;270:1;267;260:12;204:70;293:5;14:290;-1:-1:-1;;;14:290:5:o;:::-;132:968:2;;;;;;",
   "deployedSourceMap": "132:968:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;601:496;;;;;;:::i;:::-;;:::i;:::-;;226:32;;;;;-1:-1:-1;;;;;226:32:2;;;;;;-1:-1:-1;;;;;383:32:5;;;365:51;;353:2;338:18;226:32:2;;;;;;;;167:52;;;;;-1:-1:-1;;;;;167:52:2;;;267:53;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;830:14:5;;823:22;805:41;;793:2;778:18;267:53:2;665:187:5;601:496:2;669:22;;:50;;-1:-1:-1;;;669:50:2;;;;;1003:25:5;;;-1:-1:-1;;;;;669:22:2;;;;:41;;976:18:5;;669:50:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;661:83;;;;-1:-1:-1;;;661:83:2;;1523:2:5;661:83:2;;;1505:21:5;1562:2;1542:18;;;1535:30;-1:-1:-1;;;1581:18:5;;;1574:50;1641:18;;661:83:2;;;;;;;;;843:33;;;;:24;:33;;;;;;;;842:34;834:89;;;;-1:-1:-1;;;834:89:2;;1872:2:5;834:89:2;;;1854:21:5;1911:2;1891:18;;;1884:30;1950:34;1930:18;;;1923:62;-1:-1:-1;;;2001:18:5;;;1994:40;2051:19;;834:89:2;1670:406:5;834:89:2;944:33;;;;:24;:33;;;;;;;:40;;-1:-1:-1;;944:40:2;980:4;944:40;;;1048:41;359:2;;969:7;;1048:41;;;;359:2;1003:25:5;;991:2;976:18;;857:177;1048:41:2;;;;;;;;650:447;601:496;:::o;14:180:5:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:5;;14:180;-1:-1:-1;14:180:5:o;1039:277::-;1106:6;1159:2;1147:9;1138:7;1134:23;1130:32;1127:52;;;1175:1;1172;1165:12;1127:52;1207:9;1201:16;1260:5;1253:13;1246:21;1239:5;1236:32;1226:60;;1282:1;1279;1272:12;1226:60;1305:5;1039:277;-1:-1:-1;;;1039:277:5:o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport \"./RideManagementContract.sol\";\r\nimport \"./RideContract.sol\";\r\n\r\ncontract CarbonOffsetCredit {\r\n    RideManagementContract public rideManagementContract;\r\n    RideContract public ridecontract;\r\n\r\n    mapping(uint => bool) public rideToOffsetCreditIssued;\r\n\r\n    uint constant CREDIT_AMOUNT = 20;\r\n\r\n    event OffsetCreditIssued(uint indexed rideId, uint creditAmount);\r\n\r\n    constructor(address _rideManagementContractAddress) {\r\n        rideManagementContract = RideManagementContract(_rideManagementContractAddress);\r\n    }\r\n\r\n    function issueOffsetCredit(uint _rideId) public  {\r\n        require(rideManagementContract.markRideAsComplete(_rideId), \"Ride is not complete\");\r\n        // require(ridecontract.deleteRide(_rideId), \"Ride is not complete\");\r\n        require(!rideToOffsetCreditIssued[_rideId], \"Offset credit already issued for this ride\");\r\n        \r\n        rideToOffsetCreditIssued[_rideId] = true;\r\n\r\n        uint creditAmount = CREDIT_AMOUNT;\r\n\r\n        emit OffsetCreditIssued(_rideId, creditAmount);\r\n    }\r\n}\r\n",
-  "sourcePath": "D:\\Yugo - Final project\\yugo\\src\\contracts\\CarbonOffsetCredit.sol",
+  "sourcePath": "D:\\Yugo_Blockchain\\src\\contracts\\CarbonOffsetCredit.sol",
   "ast": {
     "absolutePath": "project:/contracts/CarbonOffsetCredit.sol",
     "exportedSymbols": {
@@ -1711,10 +1711,10 @@
         220
       ],
       "RideContract": [
-        412
+        462
       ],
       "RideManagementContract": [
-        522
+        572
       ]
     },
     "id": 221,
@@ -1739,7 +1739,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 221,
-        "sourceUnit": 523,
+        "sourceUnit": 573,
         "src": "60:38:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1751,7 +1751,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 221,
-        "sourceUnit": 413,
+        "sourceUnit": 463,
         "src": "100:28:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1784,7 +1784,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_RideManagementContract_$522",
+              "typeIdentifier": "t_contract$_RideManagementContract_$572",
               "typeString": "contract RideManagementContract"
             },
             "typeName": {
@@ -1797,13 +1797,13 @@
                   "167:22:2"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 522,
+                "referencedDeclaration": 572,
                 "src": "167:22:2"
               },
-              "referencedDeclaration": 522,
+              "referencedDeclaration": 572,
               "src": "167:22:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RideManagementContract_$522",
+                "typeIdentifier": "t_contract$_RideManagementContract_$572",
                 "typeString": "contract RideManagementContract"
               }
             },
@@ -1822,7 +1822,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_RideContract_$412",
+              "typeIdentifier": "t_contract$_RideContract_$462",
               "typeString": "contract RideContract"
             },
             "typeName": {
@@ -1835,13 +1835,13 @@
                   "226:12:2"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 412,
+                "referencedDeclaration": 462,
                 "src": "226:12:2"
               },
-              "referencedDeclaration": 412,
+              "referencedDeclaration": 462,
               "src": "226:12:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RideContract_$412",
+                "typeIdentifier": "t_contract$_RideContract_$462",
                 "typeString": "contract RideContract"
               }
             },
@@ -2034,7 +2034,7 @@
                       "referencedDeclaration": 154,
                       "src": "506:22:2",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RideManagementContract_$522",
+                        "typeIdentifier": "t_contract$_RideManagementContract_$572",
                         "typeString": "contract RideManagementContract"
                       }
                     },
@@ -2066,10 +2066,10 @@
                         "name": "RideManagementContract",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 522,
+                        "referencedDeclaration": 572,
                         "src": "531:22:2",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_RideManagementContract_$522_$",
+                          "typeIdentifier": "t_type$_t_contract$_RideManagementContract_$572_$",
                           "typeString": "type(contract RideManagementContract)"
                         }
                       },
@@ -2085,13 +2085,13 @@
                       "src": "531:54:2",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_RideManagementContract_$522",
+                        "typeIdentifier": "t_contract$_RideManagementContract_$572",
                         "typeString": "contract RideManagementContract"
                       }
                     },
                     "src": "506:79:2",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_RideManagementContract_$522",
+                      "typeIdentifier": "t_contract$_RideManagementContract_$572",
                       "typeString": "contract RideManagementContract"
                     }
                   },
@@ -2194,7 +2194,7 @@
                             "referencedDeclaration": 154,
                             "src": "669:22:2",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_RideManagementContract_$522",
+                              "typeIdentifier": "t_contract$_RideManagementContract_$572",
                               "typeString": "contract RideManagementContract"
                             }
                           },
@@ -2206,7 +2206,7 @@
                           "memberLocation": "692:18:2",
                           "memberName": "markRideAsComplete",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 521,
+                          "referencedDeclaration": 571,
                           "src": "669:41:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$_t_bool_$",
@@ -2668,8 +2668,8 @@
     "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.13",
-  "updatedAt": "2023-04-29T21:30:28.173Z",
+  "schemaVersion": "3.4.12",
+  "updatedAt": "2023-04-30T14:16:01.198Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

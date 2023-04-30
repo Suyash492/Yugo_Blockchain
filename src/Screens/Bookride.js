@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getMatchedRides, bookRide, getDetails } from "../Web3helpers";
+import { getMatchedRides, bookRide, getDetails, decrementSeats } from "../Web3helpers";
 import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import Navbar from "./Navbar";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -12,9 +12,11 @@ const RideList = () => {
   const [endLocation1, setEndLocation] = useState("");
   const [date1, setDate] = useState("");
   const [rides, setRides] = useState([]);
+  const [currId, setCurrId] = useState();
   const [showModal, setShowModal] = useState(false);
-  const [showModal2, setShowModal2] = useState(false);
+  // const [seat, setSeat] = useState("");
   const [selectedRide, setSelectedRide] = useState(null);
+  // const [ pay , setPay] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,6 +32,59 @@ const RideList = () => {
       console.log(error);
     }
   };
+  // const handleSubmitseat = async (e) => {
+  //   e.preventDefault();
+  //   console.log(rides);
+  //   console.log(currId);
+  //   const data = new FormData(e.target);
+  //   setError();
+  //   await startPayment({
+  //     setError,
+  //     setTxs,
+  //     ether: data.get("ether"),
+  //     addr: data.get("addr"),
+  //   });
+  //   try {
+  //     const seats = await decrementSeats(rides[currId][7]);
+
+  //   }
+  //   catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  const handleSubmit1 = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    setError();
+    await startPayment({
+      setError,
+      setTxs,
+      ether: data.get("ether"),
+      addr: data.get("addr"),
+    });
+    console.log(rides);
+    console.log(currId);
+    try {
+      const seats = await decrementSeats(rides[currId][7]);
+
+    }
+    catch (error) {
+      console.log(error);
+    }
+
+  };
+  // async function handleSubmitseat(e) {
+  //   e.preventDefault();
+  //   console.log(rides);
+  //   console.log(currId);
+  
+  //   try {
+  //     const seats = await decrementSeats(rides[currId][7]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  
 
   const startPayment = async ({ setError, setTxs, ether, addr }) => {
     try {
@@ -47,6 +102,8 @@ const RideList = () => {
       console.log({ ether, addr });
       console.log("tx", tx);
       setTxs([tx]);
+
+
     } catch (err) {
       setError(err.message);
     }
@@ -54,17 +111,19 @@ const RideList = () => {
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
 
-  const handleSubmit1 = async (e) => {
-    e.preventDefault();
-    const data = new FormData(e.target);
-    setError();
-    await startPayment({
-      setError,
-      setTxs,
-      ether: data.get("ether"),
-      addr: data.get("addr"),
-    });
-  };
+ 
+  // function handleSubmit1(e) {
+  //   e.preventDefault();
+  //   const data = new FormData(e.target);
+  //   setError();
+  //   startPayment({
+  //     setError,
+  //     setTxs,
+  //     ether: data.get("ether"),
+  //     addr: data.get("addr"),
+  //   });
+  // }
+  
 
   return (
     <div>
@@ -122,6 +181,7 @@ const RideList = () => {
                     {ride[0]} to {ride[1]}
                   </p>
                   <p className="text-gray-500 mt-1">{ride[2]} ETH</p>
+                  <p className="text-gray-500 mt-1">{ride[5]}</p>
                 </div>
                 <button
                   className="text-lg py-2 px-4 rounded-md bg-green-600 hover:bg-green-700 text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 mx-4"
@@ -130,6 +190,9 @@ const RideList = () => {
                     setShowModal(true);
                     // Set the ride details in the state
                     setSelectedRide(ride);
+                    console.log(ride[7])
+                    setCurrId(ride[7])
+                    // handleSubmitseat();
                   }}
                 >
                   Book
@@ -165,7 +228,12 @@ const RideList = () => {
             <p className="text-gray-700">
               Time: {selectedRide && selectedRide[4]}
             </p>
-            <form className="m-4" onSubmit={handleSubmit1}>
+            <p className="text-gray-700">
+              Num of seats: {selectedRide && selectedRide[5]}
+            </p>
+            <form className="m-4"
+              onSubmit={handleSubmit1}
+            >
               <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
                 <main className="mt-4 p-4">
                   <h1 className="text-xl font-semibold text-gray-700 text-center">
@@ -196,6 +264,7 @@ const RideList = () => {
                   <button
                     type="submit"
                     className="btn btn-primary submit-button focus:ring focus:outline-none w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg"
+                    
                   >
                     Pay now
                   </button>

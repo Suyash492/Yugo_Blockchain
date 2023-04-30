@@ -13,12 +13,14 @@ contract RideContract {
         uint256 date;
         uint256 time;
         uint256 noofpass;
+        // uint256 availableSeats;
         bool booked;
         RideStatus status;
     }
 
     Ride[] public rides;
     Ride[] public storedride;
+   
     mapping(address=>Ride) public currentRide;
 
     event NewRide(uint rideId);
@@ -36,6 +38,7 @@ contract RideContract {
             booked: false,
             status: RideStatus.Active, 
             noofpass: _noofpass
+            // availableSeats: _noofpass
         });
         rides.push(newRide);
         currentRide[msg.sender]=newRide; 
@@ -43,11 +46,20 @@ contract RideContract {
         emit NewRide(rideId);
         totalRides=rideId;
     }
+    function decrementSeats(uint256 _rideId) public returns (uint256) {
+        require(_rideId > 0 && _rideId <= rides.length, "Invalid ride ID");
+        Ride storage ride = rides[_rideId-1];
+        require(ride.noofpass > 0, "No available seats in ride");
+        ride.noofpass--;
+        return(rides[_rideId-1].noofpass);
+    }
     function getDetails(uint256 _id)public view returns(string memory,string memory,uint256,uint256,uint256,uint256,address){
         return (rides[_id-1].startLocation,rides[_id-1].endLocation,rides[_id-1].fare,rides[_id-1].date,rides[_id-1].time,rides[_id-1].noofpass,rides[_id-1].driver);
     }
+    
 
     function deleteRide(uint256 _rideId) public {
         delete rides[_rideId];
     }
+    
 }

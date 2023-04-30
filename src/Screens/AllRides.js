@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { getAllRides } from "../Web3helpers";
 import Navbar from "./Navbar";
+// import startPayment from "./Bookride";
+
 
 function AllRides() {
   const [rides, setRides] = useState([]);
@@ -29,6 +31,9 @@ function AllRides() {
                   </Card.Title>
                   <hr className="my-2"/>
                   <Card.Text>
+                    <span className="font-bold">Ride ID:</span> {ride[7]}
+                  </Card.Text>
+                  <Card.Text>
                     <span className="font-bold">Start Location:</span> {ride[0]}
                   </Card.Text>
                   <Card.Text>
@@ -42,6 +47,9 @@ function AllRides() {
                   </Card.Text>
                   <Card.Text>
                     <span className="font-bold">Time:</span> {ride[4]}
+                  </Card.Text>
+                  <Card.Text>
+                    <span className="font-bold">No of seats:</span> {ride[5]}
                   </Card.Text>
                 </Card.Body>
               </Card>
