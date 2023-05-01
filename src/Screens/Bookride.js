@@ -52,6 +52,21 @@ const RideList = () => {
   //     console.log(error);
   //   }
   // };
+  function generateReceipt() {
+    const receiptWindow = window.open('', 'Receipt');
+    receiptWindow.document.write('<html><head><title>Receipt</title></head><body>');
+    receiptWindow.document.write('<h1>YuGo </h1>');
+    receiptWindow.document.write('<h1>Receipt</h1>');
+    receiptWindow.document.write(`<p>Ride From: ${selectedRide && selectedRide[0]} to
+    ${selectedRide && selectedRide[1]}</p>
+    <ul><li>Date:${selectedRide && selectedRide[3]} </li>
+    <li>Time:${selectedRide && selectedRide[4]} </li>
+    <li>Amount Paid:${selectedRide && selectedRide[2]} ETH </li>
+    </ul>`);
+    receiptWindow.document.write('</body></html>');
+    receiptWindow.document.close();
+    receiptWindow.print();
+  }
   const handleSubmit1 = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -62,29 +77,20 @@ const RideList = () => {
       ether: data.get("ether"),
       addr: data.get("addr"),
     });
-    console.log(rides);
-    console.log(currId);
-    try {
-      const seats = await decrementSeats(rides[currId][7]);
-
-    }
-    catch (error) {
-      console.log(error);
-    }
 
   };
   // async function handleSubmitseat(e) {
   //   e.preventDefault();
   //   console.log(rides);
   //   console.log(currId);
-  
+
   //   try {
   //     const seats = await decrementSeats(rides[currId][7]);
   //   } catch (error) {
   //     console.log(error);
   //   }
   // }
-  
+
 
   const startPayment = async ({ setError, setTxs, ether, addr }) => {
     try {
@@ -102,16 +108,28 @@ const RideList = () => {
       console.log({ ether, addr });
       console.log("tx", tx);
       setTxs([tx]);
-
-
+     
+      console.log(rides);
+      console.log(currId);
+      const receipt = generateReceipt();
+      const blob = new Blob([receipt], { type: 'text/plain;charset=utf-8' });
+      try {
+        const seats = await decrementSeats(rides[currId][7]);
+      } 
+      catch (error) {
+        console.log(error);
+      }
+      
     } catch (err) {
       setError(err.message);
     }
+    
   };
+  
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
 
- 
+
   // function handleSubmit1(e) {
   //   e.preventDefault();
   //   const data = new FormData(e.target);
@@ -123,7 +141,7 @@ const RideList = () => {
   //     addr: data.get("addr"),
   //   });
   // }
-  
+
 
   return (
     <div>
@@ -209,34 +227,28 @@ const RideList = () => {
           onHide={() => setShowModal(false)}
           className="bg-gray-900 bg-opacity-50 fixed inset-0 flex items-center justify-center"
         >
-          <Modal.Header closeButton className="bg-white rounded-t-lg p-4">
-            <Modal.Title className="font-bold text-lg mx-auto">
-              Book Ride
-            </Modal.Title>
+          <Modal.Header closeButton className="bg-white rounded-t-lg p-4 text-center">
+            <Modal.Title className="font-bold text-lg ">Book Ride</Modal.Title>
           </Modal.Header>
-          <Modal.Body className="bg-white rounded-b-lg p-4">
-            <p className="text-gray-700">
+
+          <Modal.Body className="bg-white rounded-b-lg p-4 flex flex-col items-center justify-center">
+            <p className="text-gray-700 mt-1 text-lg">
               Selected Ride: {selectedRide && selectedRide[0]} to{" "}
               {selectedRide && selectedRide[1]}
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-lg">
               Price: {selectedRide && selectedRide[2]} ETH
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-lg">
               Date: {selectedRide && selectedRide[3]}
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-2 text-lg">
               Time: {selectedRide && selectedRide[4]}
             </p>
-            <p className="text-gray-700">
-              Num of seats: {selectedRide && selectedRide[5]}
-            </p>
-            <form className="m-4"
-              onSubmit={handleSubmit1}
-            >
-              <div className="credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-white">
+            <form className="m-4 w-full max-w-md" onSubmit={handleSubmit1}>
+              <div className="credit-card w-full shadow-lg mx-auto rounded-xl bg-white">
                 <main className="mt-4 p-4">
-                  <h1 className="text-xl font-semibold text-gray-700 text-center">
+                  <h1 className="text-xl font-semibold  text-center">
                     Send ETH payment
                   </h1>
                   <div className="">
@@ -260,16 +272,15 @@ const RideList = () => {
                     </div>
                   </div>
                 </main>
+
                 <footer className="p-4">
                   <button
                     type="submit"
                     className="btn btn-primary submit-button focus:ring focus:outline-none w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg"
-                    
                   >
                     Pay now
                   </button>
                   <ErrorMessage message={error} />
-                  {/* <TxList txs={txs} /> */}
                 </footer>
               </div>
             </form>
