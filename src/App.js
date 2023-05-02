@@ -7,6 +7,7 @@ import Createride from "./Screens/Createride";
 import AllRides from "./Screens/AllRides";
 import Bookride from "./Screens/Bookride";
 import Payment from "./Payment";
+import Profile from "./Screens/Profile";
 
 function App() {
   const email = localStorage.getItem("email");
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Allrides" element={<AllRides />} />
           <Route path="/Bookride" element={<Bookride />} />
           <Route path="/Payment" element={<Payment />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
       {/* <Createride></Createride> */}

@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import { getMatchedRides, bookRide, getDetails, decrementSeats } from "../Web3helpers";
+import {
+  getMatchedRides,
+  bookRide,
+  getDetails,
+  decrementSeats,
+  storeRideDetails,
+} from "../Web3helpers";
 import { Container, Row, Col, Card, Modal, Button } from "react-bootstrap";
 import Navbar from "./Navbar";
 import { Navigate, useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import ErrorMessage from "../ErrorMessage";
-// import TxList from "../TxList";
+import TxList from "../TxList";
 
 const RideList = () => {
   const [startLocation1, setStartLocation] = useState("");
@@ -13,6 +19,7 @@ const RideList = () => {
   const [date1, setDate] = useState("");
   const [rides, setRides] = useState([]);
   const [currId, setCurrId] = useState();
+  // const [currRide, setCurrRide] = useState();
   const [showModal, setShowModal] = useState(false);
   // const [seat, setSeat] = useState("");
   const [selectedRide, setSelectedRide] = useState(null);
@@ -53,17 +60,30 @@ const RideList = () => {
   //   }
   // };
   function generateReceipt() {
-    const receiptWindow = window.open('', 'Receipt');
-    receiptWindow.document.write('<html><head><title>Receipt</title></head><body>');
-    receiptWindow.document.write('<h1>YuGo </h1>');
-    receiptWindow.document.write('<h1>Receipt</h1>');
-    receiptWindow.document.write(`<p>Ride From: ${selectedRide && selectedRide[0]} to
+    const details = storeRideDetails(
+      selectedRide[0],
+      selectedRide[1],
+      selectedRide[3],
+      selectedRide[4],
+      selectedRide[2]
+    );
+
+    // console.log(currRide);
+    const receiptWindow = window.open("", "Receipt");
+    receiptWindow.document.write(
+      "<html><head><title>Receipt</title></head><body>"
+    );
+    receiptWindow.document.write("<h1>YuGo </h1>");
+    receiptWindow.document.write("<h1>Receipt</h1>");
+    receiptWindow.document.write(`<p>Ride From: ${
+      selectedRide && selectedRide[0]
+    } to
     ${selectedRide && selectedRide[1]}</p>
     <ul><li>Date:${selectedRide && selectedRide[3]} </li>
     <li>Time:${selectedRide && selectedRide[4]} </li>
     <li>Amount Paid:${selectedRide && selectedRide[2]} ETH </li>
     </ul>`);
-    receiptWindow.document.write('</body></html>');
+    receiptWindow.document.write("</body></html>");
     receiptWindow.document.close();
     receiptWindow.print();
   }
@@ -77,20 +97,7 @@ const RideList = () => {
       ether: data.get("ether"),
       addr: data.get("addr"),
     });
-
   };
-  // async function handleSubmitseat(e) {
-  //   e.preventDefault();
-  //   console.log(rides);
-  //   console.log(currId);
-
-  //   try {
-  //     const seats = await decrementSeats(rides[currId][7]);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
 
   const startPayment = async ({ setError, setTxs, ether, addr }) => {
     try {
@@ -108,40 +115,23 @@ const RideList = () => {
       console.log({ ether, addr });
       console.log("tx", tx);
       setTxs([tx]);
-     
+
       console.log(rides);
       console.log(currId);
       const receipt = generateReceipt();
-      const blob = new Blob([receipt], { type: 'text/plain;charset=utf-8' });
+      const blob = new Blob([receipt], { type: "text/plain;charset=utf-8" });
       try {
         const seats = await decrementSeats(rides[currId][7]);
-      } 
-      catch (error) {
+      } catch (error) {
         console.log(error);
       }
-      
     } catch (err) {
       setError(err.message);
     }
-    
   };
-  
+
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
-
-
-  // function handleSubmit1(e) {
-  //   e.preventDefault();
-  //   const data = new FormData(e.target);
-  //   setError();
-  //   startPayment({
-  //     setError,
-  //     setTxs,
-  //     ether: data.get("ether"),
-  //     addr: data.get("addr"),
-  //   });
-  // }
-
 
   return (
     <div>
@@ -204,13 +194,10 @@ const RideList = () => {
                 <button
                   className="text-lg py-2 px-4 rounded-md bg-green-600 hover:bg-green-700 text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 mx-4"
                   onClick={() => {
-                    // Open the modal when the button is clicked
                     setShowModal(true);
-                    // Set the ride details in the state
                     setSelectedRide(ride);
-                    console.log(ride[7])
-                    setCurrId(ride[7])
-                    // handleSubmitseat();
+                    console.log(ride[7]);
+                    setCurrId(ride[7]);
                   }}
                 >
                   Book
@@ -227,7 +214,10 @@ const RideList = () => {
           onHide={() => setShowModal(false)}
           className="bg-gray-900 bg-opacity-50 fixed inset-0 flex items-center justify-center"
         >
-          <Modal.Header closeButton className="bg-white rounded-t-lg p-4 text-center">
+          <Modal.Header
+            closeButton
+            className="bg-white rounded-t-lg p-4 text-center"
+          >
             <Modal.Title className="font-bold text-lg ">Book Ride</Modal.Title>
           </Modal.Header>
 

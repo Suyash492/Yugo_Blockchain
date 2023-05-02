@@ -38,7 +38,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-              <NavLink  className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+              <NavLink to="/Profile" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
                   Profile
                 </NavLink>
                 {/* <button className="block px-4 py-2 text-gray-800 hover:bg-gray-200" >
