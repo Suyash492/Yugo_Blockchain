@@ -21,7 +21,7 @@ function AllRides() {
       <Navbar></Navbar>
       <Row>
         <Col>
-          <h1 className="text-5xl font-bold my-8">All Rides</h1>
+          <h1 className="text-5xl font-bold my-8 }">All Rides</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {rides.map((ride, index) => (
               <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105">

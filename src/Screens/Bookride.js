@@ -171,7 +171,7 @@ const RideList = () => {
             </label>
           </div>
           <button
-            className="text-xl py-2 px-4 rounded-md bg-purple-600 hover:bg-purple-700 text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+            className="text-xl py-2 px-4 rounded-md bg-blue-400 hover:bg-blue-800 text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
             type="submit"
           >
             Search Rides

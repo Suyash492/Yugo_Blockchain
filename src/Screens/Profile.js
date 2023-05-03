@@ -128,9 +128,9 @@ const Profile = () => {
                     </p>
                     <div className="flex items-center">
                       <StarRating />
-                      <button className="ml-2 bg-blue-500 text-white px-3 py-1 rounded-md" onClick={handleSubmit}>
+                      {/* <button className="ml-2 bg-blue-500 text-white px-3 py-1 rounded-md" onClick={handleSubmit}>
                         Submit
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </Card.Body>

@@ -8,6 +8,7 @@ import AllRides from "./Screens/AllRides";
 import Bookride from "./Screens/Bookride";
 import Payment from "./Payment";
 import Profile from "./Screens/Profile";
+import Transition from "./Transition";
 
 function App() {
   const email = localStorage.getItem("email");
@@ -15,11 +16,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<SignIn />} />
+          <Route exact path="/" element={<Transition />} />
+          <Route exact path="/Signin" element={<SignIn />} />
           <Route path="/Signup" element={<SignUp />} />
           <Route
             path="/Home"
-            element={email ? <Home /> : <Navigate to="/" />}
+            element={email ? <Home /> : <Navigate to="/Signin" />}
           />
           <Route path="/Createride" element={<Createride />} />
           <Route path="/Allrides" element={<AllRides />} />

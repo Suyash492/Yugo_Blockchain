@@ -1,5 +1,6 @@
 import * as React from "react";
 import { loadBlockchainData, loadWeb3 } from "../Web3helpers";
+import myimage3 from "../images/Data_security_27.jpg"
  
 import { useNavigate } from "react-router-dom";
 export default function SignUp() {
@@ -18,7 +19,9 @@ export default function SignUp() {
     setAccounts(accounts);
     setAuth(auth);
   };
- 
+ function tologin(){
+navigate("/");
+ }
   const signUp = async () => {
     if (!username || !email || !password) {
       alert("please fill all details");
@@ -36,7 +39,7 @@ export default function SignUp() {
  
       localStorage.setItem("username", username);
       localStorage.setItem("email", email);
-      navigate("/");
+      navigate("/Signin");
     } catch (e) {
       console.log(e.message);
     }
@@ -50,13 +53,13 @@ export default function SignUp() {
   }, []);
  
   return (
-    <div style={rootDiv}>
-      {/* <img
-        src="https://media.geeksforgeeks.org/wp-content/uploads/20210318103632/gfg.png"
-        style={image}
-        alt="geeks"
-      /> */}
+    <div className="" style={rootDiv}>
+      <div className="flex">
+      <img className="w-auto h-[720px] ml-[-300px]" src={myimage3} alt="" />
+      <div className="pl-[100px]" style={rootDiv}>
+      <h1 className="text-3xl mb-4">What's your email?</h1>
       <input
+      className="bg-slate-200"
         style={input}
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -64,6 +67,7 @@ export default function SignUp() {
         type="text"
       />
       <input
+      className="bg-slate-200"
         style={input}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -71,16 +75,24 @@ export default function SignUp() {
         type="text"
       />
       <input
+      className="bg-slate-200"
         style={input}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
         type="password"
       />
-      <button style={button} onClick={signUp}>
+      <button style={button}  onClick={signUp}>
         {" "}
+        
         Sign Up
       </button>
+      <p>Already have a account?</p>
+      <span onClick={tologin} className="text-blue-400">Login</span>
+      </div>
+      </div>
+      
+      
     </div>
   );
 }
@@ -104,14 +116,14 @@ const input = {
 };
  
 const button = {
-  width: 325,
+  width: 100,
   padding: 10,
   borderRadius: 10,
-  margin: 10,
+  margin: 8,
   cursor: "pointer",
   fontSize: 17,
   color: "white",
-  backgroundColor: "#9D27CD",
+  backgroundColor: "blue",
   border: "none",
 };
  

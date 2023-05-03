@@ -1,6 +1,7 @@
 import * as React from "react";
 import { loadBlockchainData, loadWeb3 } from "../Web3helpers";
 import { useNavigate } from "react-router-dom";
+import myimgae2 from "../images/na_feb_34.jpg"
  
 export default function SignIn() {
   const [email, setEmail] = React.useState("");
@@ -49,12 +50,10 @@ export default function SignIn() {
  
   return (
     <div style={rootDiv}>
-      {/* <img
-        src="https://media.geeksforgeeks.org/wp-content/uploads/20210318103632/gfg.png"
-        style={image}
-        alt="geeks"
-      /> */}
+      <img className="w-[700px] h-auto mt-[-120px]" src={myimgae2} alt="" />
+      <h1 className="text-3xl mb-4">What's your email and password?</h1>
       <input
+      className="bg-slate-200"
         style={input}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
@@ -62,6 +61,7 @@ export default function SignIn() {
         type="text"
       />
       <input
+      className="bg-slate-200"
         style={input}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -74,6 +74,7 @@ export default function SignIn() {
       </button>
  
       <span
+      className="text-blue-400"
         style={{ cursor: "pointer" }}
         onClick={() => {
           navigate("/Signup");
@@ -105,14 +106,14 @@ const input = {
 };
  
 const button = {
-  width: 325,
+  width: 100,
   padding: 10,
   borderRadius: 10,
   margin: 10,
   cursor: "pointer",
   fontSize: 17,
   color: "white",
-  backgroundColor: "#9D27CD",
+  backgroundColor: "blue",
   border: "none",
 };
  
