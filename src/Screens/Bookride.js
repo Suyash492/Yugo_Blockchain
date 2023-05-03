@@ -189,7 +189,7 @@ const RideList = () => {
                     {ride[0]} to {ride[1]}
                   </p>
                   <p className="text-gray-500 mt-1">{ride[2]} ETH</p>
-                  <p className="text-gray-500 mt-1">{ride[5]}</p>
+                  <p className="text-gray-500 mt-1">Time :{ride[4]}</p>
                 </div>
                 <button
                   className="text-lg py-2 px-4 rounded-md bg-green-600 hover:bg-green-700 text-white font-semibold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 mx-4"
